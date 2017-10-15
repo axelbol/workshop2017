@@ -17,4 +17,18 @@ Route::get('/', function () {
 
 Route::get('/catalog', 'CatalogController@index');
 
+Route::get('/product', 'ProductController@index');
+
 Route::get('/catalog/dataTable', 'CatalogController@indexDataTable');
+
+Route::get('/catalogs', 'PersonalAccountController@create');
+
+Route::get('/login', 'PersonalAccountController@login');
+
+Route::get('/create_product', 'ProductController@create');
+
+Route::post('/store_product', 'ProductController@store');
+
+Route::post('/create_account', 'PersonalAccountController@store');
+
+Route::post('/authenticate', 'PersonalAccountController@authenticate');
