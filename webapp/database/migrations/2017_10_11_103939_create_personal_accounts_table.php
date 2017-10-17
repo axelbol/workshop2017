@@ -15,10 +15,11 @@ class CreatePersonalAccountsTable extends Migration
     {
         Schema::create('personal_accounts', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('first_name', '20');
-            $table->string('last_name', '20');
-            $table->string('email', '30');
-            $table->string('password', '20');
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('email');
+            $table->string('password');
+            $table->enum('type', ['buyer', 'seller']);
             $table->boolean('active')->default('true');
             $table->timestamps();
         });

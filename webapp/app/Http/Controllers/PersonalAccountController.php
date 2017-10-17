@@ -41,10 +41,13 @@ class PersonalAccountController extends Controller
         $account->first_name = $request->first_name;
         $account->last_name = $request->last_name;
         $account->email = $request->email;
-        $account->password = $request->password;
-        DB::transaction(function() use ($account) {
+        $account->type = $request->type;
+        $account->password = bcrypt($request->password);
+        DB::transaction(function() use ($account)
+        {
             $account->save();
         });
+
         return view('pages.login');
     }
 
