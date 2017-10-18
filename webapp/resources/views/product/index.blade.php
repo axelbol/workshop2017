@@ -1,8 +1,8 @@
 @extends('layouts.app')
 
-@section('menu_dashboard', 'open active')
-@section('title', 'Listado de Catalogos')
-@section('title-description', 'Administración de los catalogos del sistema')
+@section('product', 'open active')
+@section('title', 'Productos')
+@section('title-description', 'Productos en venta')
 
 @section('content')
 

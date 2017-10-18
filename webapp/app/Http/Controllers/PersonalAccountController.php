@@ -16,7 +16,8 @@ class PersonalAccountController extends Controller
      */
     public function index()
     {
-        //
+        $users = PersonalAccount::orderBy('id', 'ASC')->paginate(5);
+        return view('pages.index')->with('users', $users);
     }
 
     /**
@@ -91,10 +92,15 @@ class PersonalAccountController extends Controller
      * @param  \App\PersonalAccount  $personalAccount
      * @return \Illuminate\Http\Response
      */
-    public function destroy(PersonalAccount $personalAccount)
+    public function destroy($id)
     {
-        //
+        $account = PersonalAccount::find($id);
+        $account->delete();
+
+        return back();
+
     }
+
     public function authenticate(ValidateLogin $request)
     {
         $auth = PersonalAccount::where('email', '=', $request->email )->get()->first();

@@ -1,24 +1,25 @@
 <nav class="menu">
                             <ul class="sidebar-menu metismenu" id="sidebar-menu">
+
                                 <li class="@yield('menu_dashboard','')">
-                                    <a href="index.html">
+                                    <a href="#">
                                         <i class="fa fa-home"></i> Dashboard </a>
                                 </li>
-								<li class="@yield('menu_catalog','')">
-                                    <a href="index.html">
-                                        <i class="fa fa-home"></i> Catalogos </a>
+								<li class="@yield('list_account','')">
+                                    <a href="{{url('/list_account')}}">
+                                        <i class="fa fa-home"></i> Lista de usuarios </a>
                                 </li>
-                                <li class="@yield('menu_manager','')">
+                                <li class="@yield('product','')">
                                     <a href="">
-                                        <i class="fa fa-th-large"></i> Items Manager
+                                        <i class="fa fa-th-large"></i> Productos
                                         <i class="fa arrow"></i>
                                     </a>
                                     <ul class="sidebar-nav">
                                         <li>
-                                            <a href="items-list.html"> Items List </a>
+                                            <a href="{{url('/product')}}"> Productos </a>
                                         </li>
                                         <li>
-                                            <a href="item-editor.html"> Item Editor </a>
+                                            <a href="{{url('/create_product')}}"> Producto nuevo </a>
                                         </li>
                                     </ul>
                                 </li>

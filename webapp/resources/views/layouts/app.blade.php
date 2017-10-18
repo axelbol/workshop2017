@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title> Workshop 2017 - @yield('title') </title>
+        <title> Workshop 2017 @yield('title') </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -128,7 +128,7 @@
                                     <a class="dropdown-item" href="#">
                                         <i class="fa fa-gear icon"></i> Settings </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="login.html">
+                                    <a class="dropdown-item" href="{{url('/create_personal_account')}}">
                                         <i class="fa fa-power-off icon"></i> Logout </a>
                                 </div>
                             </li>
@@ -145,7 +145,7 @@
                                     <span class="l l3"></span>
                                     <span class="l l4"></span>
                                     <span class="l l5"></span>
-                                </div> Modular Admin </div>
+                                </div> Easy Commerce </div>
                         </div>
                         @include('layouts.menu')
                     </div>
@@ -256,6 +256,7 @@
                     </div>
                     @yield('content')
                 </article>
+
                 <footer class="footer">
                     <div class="footer-block buttons">
                         <iframe class="footer-github-btn" src="https://ghbtns.com/github-btn.html?user=modularcode&repo=modular-admin-html&type=star&count=true" frameborder="0" scrolling="0" width="140px" height="20px"></iframe>
@@ -271,6 +272,7 @@
                         </ul>
                     </div>
                 </footer>
+
                 <div class="modal fade" id="modal-media">
                     <div class="modal-dialog modal-lg">
                         <div class="modal-content">
