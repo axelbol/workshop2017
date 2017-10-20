@@ -63,7 +63,7 @@
                     </div>
                     <div class="form-group">
                         <p class="text-muted text-center">¿No tiene una cuenta?
-                            <a href="signup.html">Crear cuenta nueva</a>
+                            <a href="signup.html">Registrece aqui</a>
                         </p>
                     </div>
                 {!! Form::close() !!}

@@ -50,7 +50,7 @@
                     @endif
                     <div class="auth-content">
                         <p class="text-center">REGISTRATE PARA PODER INGRESAR</p>
-                        {!! Form::open(['url' => '/save_account', 'method' => 'post']) !!}
+                        {!! Form::open(['url' => '/create_account', 'method' => 'post']) !!}
                         <div class="form-group">
                             {!! Form::label('personal_account', 'Cuenta Personal'); !!}
                             <div class="row">
@@ -65,11 +65,6 @@
                         <div class="form-group">
                             {!! Form::label('email ', 'Correo Electronico'); !!}
                             {!! Form::text('email', '', ['class' => 'form-control underlined', 'placeholder' => 'Ingrese su Email']); !!}
-                        </div>
-                        <div class="form-group">
-                            {!! Form::label('type', 'Tipo de usuario'); !!}
-                            {!! Form::select('type', ['' => 'Seleccione un nivel de usuario', 'buyer' => 'Comprador', 'seller' => 'Vendedor'], ' ', ['class' => 'form-control underlined']); !!}
-
                         </div>
                         <div class="form-group">
                             {!! Form::label('password', 'Contraseña'); !!}

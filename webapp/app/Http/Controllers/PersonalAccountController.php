@@ -16,8 +16,7 @@ class PersonalAccountController extends Controller
      */
     public function index()
     {
-        $users = PersonalAccount::orderBy('id', 'ASC')->paginate(5);
-        return view('pages.index')->with('users', $users);
+        //
     }
 
     /**
@@ -42,13 +41,10 @@ class PersonalAccountController extends Controller
         $account->first_name = $request->first_name;
         $account->last_name = $request->last_name;
         $account->email = $request->email;
-        $account->type = $request->type;
-        $account->password = bcrypt($request->password);
-        DB::transaction(function() use ($account)
-        {
+        $account->password = $request->password;
+        DB::transaction(function() use ($account) {
             $account->save();
         });
-
         return view('pages.login');
     }
 
@@ -92,15 +88,10 @@ class PersonalAccountController extends Controller
      * @param  \App\PersonalAccount  $personalAccount
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(PersonalAccount $personalAccount)
     {
-        $account = PersonalAccount::find($id);
-        $account->delete();
-
-        return back();
-
+        //
     }
-
     public function authenticate(ValidateLogin $request)
     {
         $auth = PersonalAccount::where('email', '=', $request->email )->get()->first();
