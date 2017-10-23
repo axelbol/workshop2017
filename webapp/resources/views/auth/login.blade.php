@@ -38,19 +38,19 @@
                         <span class="l l5"></span>
                     </div> ModularAdmin </h1>
             </header>
+
+
             <div class="auth-content">
-
-
-
-                <p class="text-center">LOGIN TO CONTINUE</p>
+                <p class="text-center">INICIE SESION PARA CONTINUAR</p>
+<!-- Cambiar aqui direccion de route -->
                 {!! Form::open(['url' => '/login', 'method' => 'post']) !!}
                 {{ csrf_field() }}
 
                 <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                    <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                    <label for="email" class="col-md-4 control-label">Correo Electronico</label>
 
                     <div class="col-md-6">
-                        <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required autofocus>
+                        <input id="email" type="email" class="form-control underlined" name="email" value="{{ old('email') }}" placeholder="Correo electronico" required autofocus>
 
                         @if ($errors->has('email'))
                             <span class="help-block">
@@ -64,7 +64,7 @@
                     <label for="password" class="col-md-4 control-label">Password</label>
 
                     <div class="col-md-6">
-                        <input id="password" type="password" class="form-control" name="password" required>
+                        <input id="password" type="password" class="form-control underlined" name="password" placeholder="Contraseña" required>
 
                         @if ($errors->has('password'))
                             <span class="help-block">
@@ -76,19 +76,16 @@
 
 
                 <div class="form-group">
-                    <div class="col-md-6 col-md-offset-4">
-                        <div class="checkbox">
-                            <label>
-                                <input type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
-                            </label>
-                        </div>
-                    </div>
+                    <label for="remember">
+                        <input class="checkbox" id="remember" {{ old('remember') ? 'checked' : '' }} type="checkbox">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="{{ route('password.request') }}" class="forgot-btn pull-right">Forgot password?</a>
                 </div>
-
 
                 <div class="form-group">
                     <div class="col-md-8 col-md-offset-4">
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-block btn-primary">
                             Login
                         </button>
 
@@ -98,18 +95,19 @@
                     </div>
                 </div>
 
-
-                    <div class="form-group">
+                <div class="form-group">
                         <p class="text-muted text-center">Do not have an account?
-                            <a href="signup.html">Sign Up!</a>
+                            <a href="{{ route('register') }}">Sign Up!</a>
                         </p>
                     </div>
                 {!! Form::close() !!}
-
-
-
             </div>
         </div>
+<!-- UNTIL HERE -->
+
+
+
+
         <div class="text-center">
             <a href="index.html" class="btn btn-secondary btn-sm">
                 <i class="fa fa-arrow-left"></i> Back to dashboard </a>
