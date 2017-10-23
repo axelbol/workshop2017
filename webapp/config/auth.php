@@ -45,6 +45,17 @@ return [
             'driver' => 'token',
             'provider' => 'users',
         ],
+
+        //ADMIN
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+        //EMPLOYEE
+        'employee' => [
+            'driver' => 'session',
+            'provider' => 'employees',
+        ],
     ],
 
     /*
@@ -70,6 +81,17 @@ return [
             'model' => App\User::class,
         ],
 
+        //ADMIN
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\Admin::class,
+        ],
+
+        //EMPLOYEE
+        'employees' => [
+            'driver' => 'eloquent',
+            'model' => App\Employee::class,
+        ],
         //'users' => [
         //   'driver' => 'eloquent',
         //    'table' => 'personal_accounts',
@@ -94,6 +116,19 @@ return [
     'passwords' => [
         'users' => [
             'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+
+        //ADMIN
+        'admins' => [
+            'provider' => 'admins',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+        //EMPLOYESS
+        'employees' => [
+            'provider' => 'employees',
             'table' => 'password_resets',
             'expire' => 60,
         ],
