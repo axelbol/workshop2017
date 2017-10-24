@@ -1,16 +1,16 @@
 <nav class="menu">
                             <ul class="sidebar-menu metismenu" id="sidebar-menu">
-                                <li class="@yield('menu_dashboard','')">
-                                    <a href="index.html">
-                                        <i class="fa fa-home"></i> Dashboard </a>
+                                <li class="@yield('home','')">
+                                    <a href="{{url('/admin')}}">
+                                        <i class="fa fa-home"></i> Home </a>
                                 </li>
-								<li class="@yield('menu_catalog','')">
-                                    <a href="index.html">
-                                        <i class="fa fa-home"></i> Catalogos </a>
+								<li class="@yield('usuarios','')">
+                                    <a href="{{url('/view')}}">
+                                        <i class="fa fa-home"></i> Usuarios </a>
                                 </li>
                                 <li class="@yield('menu_manager','')">
                                     <a href="">
-                                        <i class="fa fa-th-large"></i> Items Manager
+                                        <i class="fa fa-th-large"></i> Working on it
                                         <i class="fa arrow"></i>
                                     </a>
                                     <ul class="sidebar-nav">
@@ -24,7 +24,7 @@
                                 </li>
                                 <li>
                                     <a href="">
-                                        <i class="fa fa-bar-chart"></i> Charts
+                                        <i class="fa fa-bar-chart"></i> Working on it
                                         <i class="fa arrow"></i>
                                     </a>
                                     <ul class="sidebar-nav">
@@ -38,7 +38,7 @@
                                 </li>
                                 <li>
                                     <a href="">
-                                        <i class="fa fa-table"></i> Tables
+                                        <i class="fa fa-table"></i> Working on it
                                         <i class="fa arrow"></i>
                                     </a>
                                     <ul class="sidebar-nav">
@@ -52,11 +52,11 @@
                                 </li>
                                 <li>
                                     <a href="forms.html">
-                                        <i class="fa fa-pencil-square-o"></i> Forms </a>
+                                        <i class="fa fa-pencil-square-o"></i> Working on it </a>
                                 </li>
                                 <li>
                                     <a href="">
-                                        <i class="fa fa-desktop"></i> UI Elements
+                                        <i class="fa fa-desktop"></i> Working on it
                                         <i class="fa arrow"></i>
                                     </a>
                                     <ul class="sidebar-nav">
@@ -79,7 +79,7 @@
                                 </li>
                                 <li>
                                     <a href="">
-                                        <i class="fa fa-file-text-o"></i> Pages
+                                        <i class="fa fa-file-text-o"></i> Working on it
                                         <i class="fa arrow"></i>
                                     </a>
                                     <ul class="sidebar-nav">
@@ -108,7 +108,7 @@
                                 </li>
                                 <li>
                                     <a href="">
-                                        <i class="fa fa-sitemap"></i> Menu Levels
+                                        <i class="fa fa-sitemap"></i> Working on it
                                         <i class="fa arrow"></i>
                                     </a>
                                     <ul class="sidebar-nav">
@@ -158,7 +158,7 @@
                                 </li>
                                 <li>
                                     <a href="https://github.com/modularcode/modular-admin-html">
-                                        <i class="fa fa-github-alt"></i> Theme Docs </a>
+                                        <i class="fa fa-github-alt"></i> Working on it </a>
                                 </li>
                             </ul>
                         </nav>

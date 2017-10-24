@@ -17,11 +17,13 @@ Route::get('/', function () {
 //CATALOG
 Route::get('/catalog', 'CatalogController@index');
 Route::get('/catalog/dataTable', 'CatalogController@indexDataTable');
+
 //LOGIN CESAR
-Route::get('/create_account', 'PersonalAccountController@create');
-Route::get('/login_cesar', 'PersonalAccountController@login');
-Route::post('/create_account', 'PersonalAccountController@store');
-Route::post('/authenticate', 'PersonalAccountController@authenticate');
+//Route::get('/create_account', 'PersonalAccountController@create');
+//Route::get('/login_cesar', 'PersonalAccountController@login');
+//Route::post('/create_account', 'PersonalAccountController@store');
+//Route::post('/authenticate', 'PersonalAccountController@authenticate');
+
 //PRODUCT
 Route::get('/create_product', 'ProductController@create');
 Route::get('/product', 'ProductController@index');
@@ -38,7 +40,11 @@ Route::prefix('admin')->group(function() {
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
     Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
+    //list account
+   // Route::get('/view', 'AdminController@view');
 });
+//I don't know why it doesn`t work inside group route->admin
+Route::get('/view', 'AdminController@view');
 //EMPLOYEE
 Route::prefix('employee')->group(function() {
     Route::get('/login', 'Auth\EmployeeLoginController@showLoginForm')->name('employee.login');

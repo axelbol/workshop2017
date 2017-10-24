@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title> Workshop 2017 - @yield('title') </title>
+        <title> User Panel @yield('title') </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -115,10 +115,13 @@
                                     </footer>
                                 </div>
                             </li>
+
+
+
                             <li class="profile dropdown">
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                                     <div class="img" style="background-image: url('https://avatars3.githubusercontent.com/u/3959008?v=3&s=40')"> </div>
-                                    <span class="name">{{ session('user')->first_name }} {{ session('user')->last_name }}</span>
+                                    <span class="name"> John Doe </span>
                                 </a>
                                 <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
                                     <a class="dropdown-item" href="#">
@@ -128,8 +131,15 @@
                                     <a class="dropdown-item" href="#">
                                         <i class="fa fa-gear icon"></i> Settings </a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="login.html">
-                                        <i class="fa fa-power-off icon"></i> Logout </a>
+                                    <a class="dropdown-item">
+
+                                        <a href="{{ route('logout') }}"
+                                           onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                                            <i class="fa fa-power-off icon"></i> Logout
+                                        </a>
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
                                 </div>
                             </li>
                         </ul>
@@ -145,9 +155,9 @@
                                     <span class="l l3"></span>
                                     <span class="l l4"></span>
                                     <span class="l l5"></span>
-                                </div> Modular Admin </div>
+                                </div> User Panel </div>
                         </div>
-                        @include('layouts.menu')
+                        @include('userLayouts.menu')
                     </div>
                     <footer class="sidebar-footer">
                         <ul class="sidebar-menu metismenu" id="customize-menu">

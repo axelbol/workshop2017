@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title> ModularAdmin - Free Dashboard Theme | HTML Version </title>
+    <title> LOGIN </title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -97,7 +97,7 @@
 
                 <div class="form-group">
                         <p class="text-muted text-center">Do not have an account?
-                            <a href="{{ route('register') }}">Sign Up!</a>
+                            <a href="{{ route('register') }}">Sign Up!</a   >
                         </p>
                     </div>
                 {!! Form::close() !!}
