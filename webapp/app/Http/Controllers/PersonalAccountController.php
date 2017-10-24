@@ -95,7 +95,7 @@ class PersonalAccountController extends Controller
     public function authenticate(ValidateLogin $request)
     {
         $auth = PersonalAccount::where('email', '=', $request->email )->get()->first();
-        if($auth->password == $request->password and $auth->email == $request->email and $auth->active == true)
+        if($auth->password == $request->password and $auth->email == $request->email)
         {
             $request->session()->put('user', $auth);
             //dd(session('user'));

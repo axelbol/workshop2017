@@ -25,6 +25,7 @@ class CreateProductsTable extends Migration
             $table->foreign('account_id')->references('id')->on('personal_accounts');
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

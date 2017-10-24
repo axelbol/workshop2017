@@ -22,12 +22,12 @@ class CreatePersonalDirectionsTable extends Migration
             $table->integer('postal_code');
             $table->integer('phone_number');
             $table->integer('cellular_number');
-            $table->boolean('active');
 
             $table->integer('account_id')->unsigned();
             $table->foreign('account_id')->references('id')->on('personal_accounts');
 
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
