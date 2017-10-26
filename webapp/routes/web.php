@@ -32,3 +32,11 @@ Route::post('/store_product', 'ProductController@store');
 Route::post('/create_account', 'PersonalAccountController@store');
 
 Route::post('/authenticate', 'PersonalAccountController@authenticate');
+
+Route::get('/example', 'ProductController@getIndex');
+
+Route::get('example/datatable', 'ProductController@anyData')->name('datatables.data');
+
+Route::view('/bootstrap', 'try.layout.main');
+
+Route::view('/create', 'try.product.create');
