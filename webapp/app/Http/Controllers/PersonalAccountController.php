@@ -43,8 +43,8 @@ class PersonalAccountController extends Controller
         $account->email = $request->email;
         $account->password = $request->password;
         DB::transaction(function() use ($account) {
-            $account->save();
-        });
+        $account->save();
+    });
         return view('pages.login');
     }
 

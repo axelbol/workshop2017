@@ -35,8 +35,14 @@ Route::post('/authenticate', 'PersonalAccountController@authenticate');
 
 Route::get('/example', 'ProductController@getIndex');
 
-Route::get('example/datatable', 'ProductController@anyData')->name('datatables.data');
+Route::get('/index/datatable', 'ProductController@anyData')->name('datatables.data');
 
 Route::view('/bootstrap', 'try.layout.main');
 
 Route::view('/create', 'try.product.create');
+
+Route::get('/index', 'ProductController@getIndex');
+
+Route::get('/indexpro', 'ProductController@indexpro');
+
+Route::get('/indexpro/dataTable', 'ProductController@indexDataTable')->name('datatable');
