@@ -17,7 +17,7 @@ class CreateProductsTable extends Migration
             $table->increments('id');
             $table->string('title', '80');
             $table->string('subtitle', '55');
-            $table->string('category', '10');
+            $table->string('isbn', '15');
             $table->string('condition', '10');
             $table->text('description');
 
