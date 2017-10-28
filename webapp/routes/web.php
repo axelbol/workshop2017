@@ -34,17 +34,29 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/users/logout', 'Auth\AdminLoginController@userLogout')->name('user.logout');
 
+//En proceso
+Route::get('edit_user', 'HomeController@edit_user')->name('edit.user');
+
 //ADMIN
-Route::prefix('admin')->group(function() {
-    Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
-    Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
-    Route::get('/', 'AdminController@index')->name('admin.dashboard');
-    Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
-    //list account
+//Route::prefix('admin')->group(function() {
+//    Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+//    Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+//    Route::get('/', 'AdminController@index')->name('admin.dashboard');
+//    Route::get('/logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
+
    // Route::get('/view', 'AdminController@view');
-});
+//});
+
+Route::get('/admin', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
+Route::post('/login_admin_submit', 'Auth\AdminLoginController@login')->name('admin.login.submit');
+Route::get('/admin_dashboard', 'AdminController@index')->name('admin.dashboard');
+Route::get('/admin_logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
+
+
+//list account
 //I don't know why it doesn`t work inside group route->admin
 Route::get('/view', 'AdminController@view');
+Route::get('/get_datatable', 'AdminController@get_dataTable');
 //EMPLOYEE
 Route::prefix('employee')->group(function() {
     Route::get('/login', 'Auth\EmployeeLoginController@showLoginForm')->name('employee.login');

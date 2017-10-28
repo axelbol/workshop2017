@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Yajra\Dataables\Facades\Datatables;
 use App\User;
 
 class AdminController extends Controller
@@ -29,7 +30,13 @@ class AdminController extends Controller
 
     public function view()
     {
-        $userList = User::orderBy('id', 'ASC')-> paginate(1);
-        return view('admin.view')->with('users', $userList);
+        //$userList = User::orderBy('id', 'ASC')-> paginate(1);
+        return view('admin.view');
+            //->with('users', $userList);
+    }
+
+    public function get_dataTable()
+    {
+        return datatables()->eloquent(User::query())->toJson();
     }
 }

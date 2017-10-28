@@ -36,7 +36,7 @@
                         <span class="l l3"></span>
                         <span class="l l4"></span>
                         <span class="l l5"></span>
-                    </div> ModularAdmin </h1>
+                    </div> LOGIN </h1>
             </header>
 
 
