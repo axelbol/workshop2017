@@ -1,29 +1,24 @@
-@extends('layouts.app')
-
-@section('menu_dashboard', 'open active')
-@section('title', 'Listado de Catalogos')
-@section('title-description', 'Administración de los catalogos del sistema')
+@extends('try.layout.main')
 
 @section('content')
-<div class="container">
 
-    <table class="table table-dark" id="users-table">
+@section('content')
+
+    <table class="table table-bordered" id="users-table">
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Title</th>
-                <th>Subtitle</th>
-                <th>ISBN</th>
-                <th>Condition</th>
-                <th>Description</th>
-                <th>Created At</th>
-                <th>Updated At</th>
-                <th>Deleted At</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Subtitle</th>
+            <th>Category</th>
+            <th>Condition</th>
+            <th>Description</th>
+            <th>Created At</th>
+            <th>Updated At</th>
+            <th>Deleted At</th>
+        </tr>
         </thead>
     </table>
-
-</div>
 @stop
 
 @push('scripts')
@@ -48,4 +43,3 @@
         });
     </script>
 @endpush
-

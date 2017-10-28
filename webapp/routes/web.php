@@ -14,10 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
-//CATALOG
+
 Route::get('/catalog', 'CatalogController@index');
+
+Route::get('/product', 'ProductController@index');
+
 Route::get('/catalog/dataTable', 'CatalogController@indexDataTable');
 
+<<<<<<< HEAD
 //LOGIN CESAR
 //Route::get('/create_account', 'PersonalAccountController@create');
 //Route::get('/login_cesar', 'PersonalAccountController@login');
@@ -25,10 +29,17 @@ Route::get('/catalog/dataTable', 'CatalogController@indexDataTable');
 //Route::post('/authenticate', 'PersonalAccountController@authenticate');
 
 //PRODUCT
+=======
+Route::get('/catalogs', 'PersonalAccountController@create');
+
+Route::get('/login', 'PersonalAccountController@login');
+
+>>>>>>> 076607cd3a509669469452d438d3e608c76e8849
 Route::get('/create_product', 'ProductController@create');
-Route::get('/product', 'ProductController@index');
+
 Route::post('/store_product', 'ProductController@store');
 
+<<<<<<< HEAD
 //WORKING LOGIN
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
@@ -64,3 +75,22 @@ Route::prefix('employee')->group(function() {
     Route::get('/', 'EmployeeController@index')->name('employee.dashboard');
     Route::get('/logout', 'Auth\EmployeeLoginController@logout')->name('employee.logout');
 });
+=======
+Route::post('/create_account', 'PersonalAccountController@store');
+
+Route::post('/authenticate', 'PersonalAccountController@authenticate');
+
+Route::get('/example', 'ProductController@getIndex');
+
+Route::get('/index/datatable', 'ProductController@anyData')->name('datatables.data');
+
+Route::view('/bootstrap', 'try.layout.main');
+
+Route::view('/create', 'try.product.create');
+
+Route::get('/index', 'ProductController@getIndex');
+
+Route::get('/indexpro', 'ProductController@indexpro');
+
+Route::get('/indexpro/dataTable', 'ProductController@indexDataTable')->name('datatable');
+>>>>>>> 076607cd3a509669469452d438d3e608c76e8849

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePersonalAccountsTable extends Migration
+class CreateProductPhotosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreatePersonalAccountsTable extends Migration
      */
     public function up()
     {
-        Schema::create('personal_accounts', function (Blueprint $table) {
+        Schema::create('product_photos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('first_name', '20');
-            $table->string('last_name', '20');
-            $table->string('email', '30');
-            $table->string('password', '20');
+            $table->string('name');
+
+            $table->integer('product_id')->unsigned();
+            $table->foreign('product_id')->references('id')->on('products');
 
             $table->timestamps();
             $table->softDeletes();
@@ -32,6 +32,6 @@ class CreatePersonalAccountsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('personal_accounts');
+        Schema::dropIfExists('product_photos');
     }
 }

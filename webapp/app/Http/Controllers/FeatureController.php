@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Feature;
 use Illuminate\Http\Request;
-use App\Catalog;
 
-class CatalogController extends Controller
+class FeatureController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,16 +13,10 @@ class CatalogController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-{
-    return view('catalog.index');
-}
-
-    public function indexDataTable()
     {
-        $catalogList = Catalog::all();
-        return response()->json($catalogList);
-    } 
- 
+        //
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -47,10 +41,10 @@ class CatalogController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Feature  $feature
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Feature $feature)
     {
         //
     }
@@ -58,10 +52,10 @@ class CatalogController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Feature  $feature
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Feature $feature)
     {
         //
     }
@@ -70,10 +64,10 @@ class CatalogController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Feature  $feature
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Feature $feature)
     {
         //
     }
@@ -81,10 +75,10 @@ class CatalogController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Feature  $feature
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Feature $feature)
     {
         //
     }

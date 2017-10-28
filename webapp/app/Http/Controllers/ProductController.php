@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ValidateProduct;
 use App\Product;
+use App\ProductPhoto;
+use App\Feature;
 use Illuminate\Http\Request;
+use Yajra\Datatables\Datatables;
 
 class ProductController extends Controller
 {
@@ -36,6 +39,57 @@ class ProductController extends Controller
      */
     public function store(ValidateProduct $request)
     {
+        $product = new Product($request->all());
+        $product->account_id = session('user')->id;
+        $product->save();
+
+
+        $feature = new Feature($request->all());
+        //$product->features()->associate($product);
+        //dd($feature);
+        $num_elements = 0;
+
+        //dd(count($feature['feature']));
+
+        for($i=0;$i<count($feature['feature'])  ;$i++)
+        {
+            $data = new Feature();
+            $data->feature = $feature['feature'][$num_elements];
+            $data->desc = $feature['desc'][$num_elements];
+            $data->product()->associate($product);
+            $num_elements++;
+            $data->save();
+        }
+
+
+        //$product->features()->saveMany($feature->getAttributes());
+
+        //dd($request->feature, $request->desc);
+
+        //$feature = new Feature($request->all());
+        //echo $feature;
+        //dd($feature);
+
+        //$feature->save();
+
+       // dd($feature);
+
+
+
+
+        /*
+        foreach ($request->feature as $feature)
+        {
+            echo $feature;
+        }
+        foreach ($request->desc as $desc)
+        {
+            echo $desc;
+        }*/
+
+
+
+        /*
         $product = new Product();
         $product->title = $request->title;
         $product->subtitle = $request->subtitle;
@@ -43,7 +97,14 @@ class ProductController extends Controller
         $product->condition = $request->condition;
         $product->description = $request->description;
         $product->account_id = session('user')->id;
-        dd($product);
+
+        foreach ($request->photo as $photo)
+        {
+            $filename = $photo->store('photo');
+            ProductPhoto::create(['name' => $filename,
+                                    'product_id' => $product->id]);
+        }
+        dd($product);*/
     }
 
     /**
@@ -77,7 +138,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+
     }
 
     /**
@@ -89,5 +150,22 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         //
+    }
+    public function anyData()
+    {
+        return datatables()->of(Product::query())->toJson();
+    }
+    public function getIndex()
+    {
+        return view('try.product.index');
+    }
+    public function indexDataTable()
+    {
+        $products = Product::all();
+        return response()->json($products);
+    }
+    public function indexpro()
+    {
+        return view('try.product.datatable');
     }
 }
