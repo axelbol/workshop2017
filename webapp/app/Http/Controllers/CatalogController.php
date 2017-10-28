@@ -13,9 +13,9 @@ class CatalogController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-{
-    return view('catalog.index');
-}
+    {
+        return view('catalog.index'); 
+    }
 
     public function indexDataTable()
     {

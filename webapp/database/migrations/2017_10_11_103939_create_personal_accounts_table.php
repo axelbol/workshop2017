@@ -19,9 +19,8 @@ class CreatePersonalAccountsTable extends Migration
             $table->string('last_name', '20');
             $table->string('email', '30');
             $table->string('password', '20');
-
+            $table->boolean('active')->default('true');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 

@@ -43,8 +43,8 @@ class PersonalAccountController extends Controller
         $account->email = $request->email;
         $account->password = $request->password;
         DB::transaction(function() use ($account) {
-        $account->save();
-    });
+            $account->save();
+        });
         return view('pages.login');
     }
 
@@ -95,7 +95,7 @@ class PersonalAccountController extends Controller
     public function authenticate(ValidateLogin $request)
     {
         $auth = PersonalAccount::where('email', '=', $request->email )->get()->first();
-        if($auth->password == $request->password and $auth->email == $request->email)
+        if($auth->password == $request->password || $auth->email == $request->email || $auth->active == true)
         {
             $request->session()->put('user', $auth);
             //dd(session('user'));

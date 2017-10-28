@@ -10,7 +10,6 @@
         <!-- Place favicon.ico in the root directory -->
         <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
         <link rel="stylesheet" href="css/vendor.css">
-
         <!-- Theme initialization -->
         <script>
             var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
@@ -384,6 +383,5 @@
         <script src="js/app-template.js"></script>
         <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
         <script src="js/main.js"></script>
-        @stack('scripts')
     </body>
 </html>
