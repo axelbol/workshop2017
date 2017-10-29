@@ -34,9 +34,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/users/logout', 'Auth\AdminLoginController@userLogout')->name('user.logout');
 
-//En proceso
-Route::get('edit_user', 'HomeController@edit_user')->name('edit.user');
-
 //ADMIN
 //Route::prefix('admin')->group(function() {
 //    Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
