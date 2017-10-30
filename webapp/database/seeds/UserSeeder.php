@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
 
             'name' => $faker->firstName,
             'email' => $faker->unique()->email,
-            'password' =>\Hash::make('familia11')
+            'password' =>\Hash::make('alvarado')
             ));
         }
     }

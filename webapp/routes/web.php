@@ -61,3 +61,6 @@ Route::prefix('employee')->group(function() {
     Route::get('/', 'EmployeeController@index')->name('employee.dashboard');
     Route::get('/logout', 'Auth\EmployeeLoginController@logout')->name('employee.logout');
 });
+
+//SUPPLIER
+Route::get('/supplier', 'SupplierController@index');
