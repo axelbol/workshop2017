@@ -3,7 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Supplier;
+use DB;
 class SupplierController extends Controller
 {
     /**
@@ -34,7 +35,15 @@ class SupplierController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $supplier=new Supplier;
+        $supplier->companyName=$request->companyName;
+        $supplier->contactName=$request->contactName;
+        $supplier->address=$request->address;
+        $supplier->product=$request->product;
+        $supplier->phono=$request->phono;
+        $supplier->email=$request->email;
+
+        $supplier->save();
     }
 
     /**
