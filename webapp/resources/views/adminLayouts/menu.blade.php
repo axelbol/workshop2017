@@ -8,9 +8,9 @@
                                     <a href="{{url('/view')}}">
                                         <i class="fa fa-home"></i> Usuarios </a>
                                 </li>
-                                <li class="@yield('menu_manager','')">
+                                <li class="@yield('supplier','')">
                                     <a href="">
-                                        <i class="fa fa-th-large"></i> Working on it
+                                        <i class="fa fa-th-large"></i> Proveedores
                                         <i class="fa arrow"></i>
                                     </a>
                                     <ul class="sidebar-nav">

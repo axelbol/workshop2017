@@ -64,3 +64,4 @@ Route::prefix('employee')->group(function() {
 
 //SUPPLIER
 Route::get('/supplier', 'SupplierController@index');
+Route::post('/add_supplier', 'SupplierController@store');
