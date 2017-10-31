@@ -10,10 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//SUPPLIER
+Route::get('/supplier', 'SupplierController@index');
+Route::post('/addsupplier', 'SupplierController@store');
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+
 //CATALOG
 Route::get('/catalog', 'CatalogController@index');
 Route::get('/catalog/dataTable', 'CatalogController@indexDataTable');
@@ -62,6 +67,3 @@ Route::prefix('employee')->group(function() {
     Route::get('/logout', 'Auth\EmployeeLoginController@logout')->name('employee.logout');
 });
 
-//SUPPLIER
-Route::get('/supplier', 'SupplierController@index');
-Route::post('/add_supplier', 'SupplierController@store');

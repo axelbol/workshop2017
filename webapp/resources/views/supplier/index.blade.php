@@ -6,11 +6,9 @@
 
 @section('content')
     <div class="card">
-        <form action="/add_supplier" method="POST">
 
-        
-
-            <div class="row">
+        {!! Form::open(['url' => '/addsupplier', 'method' => 'post']) !!}
+        <div class="row">
                 <div class="col-sm-6">
                     <div class="form-group">
                         <label for="inputEmail3">Nombre de la compañia</label>
@@ -56,10 +54,10 @@
             </div>
 
         <div class="card-footer">
-            <button id="createSupplierButton" type="button" class="btn btn-info btn-fill pull-right">Registrar</button>
+            <button id="createSupplierButton" type="submit" class="btn btn-info btn-fill pull-right">Registrar</button>
             <div class="clearfix"></div>
         </div>
-        </form>
+        {!! Form::close() !!}
 
     </div>
 
