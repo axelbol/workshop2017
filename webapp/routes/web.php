@@ -10,9 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-//SUPPLIER
-Route::get('/supplier', 'SupplierController@index');
-Route::post('/addsupplier', 'SupplierController@store');
+
 Route::get('/', function () {
     return view('welcome');
 });
