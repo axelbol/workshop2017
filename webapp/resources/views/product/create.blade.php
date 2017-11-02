@@ -1,11 +1,11 @@
-@extends('mainLayouts.article')
+@extends('mainLayouts.main')
 
 @section('menu_dashboard', 'open active')
 @section('title', 'Crea tu anuncio')
 @section('title-description', 'Administración de los catalogos del sistema')
 
 @section('content')
-    <<div class="title-block">
+    <div class="title-block">
         <h1 class="title"> @yield('title') </h1>
         <p class="title-description"> @yield('title-description') </p>
     </div>

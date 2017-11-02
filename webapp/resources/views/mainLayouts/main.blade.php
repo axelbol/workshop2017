@@ -33,7 +33,7 @@
         <div class="sidebar-overlay" id="sidebar-overlay"></div>
         <div class="sidebar-mobile-menu-handle" id="sidebar-mobile-menu-handle"></div>
         <div class="mobile-menu-handle"></div>
-        @yield('mainLayouts.article')
+        @include('mainLayouts.article')
         @include('mainLayouts.footer')
     </div>
 </div>
