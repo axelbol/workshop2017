@@ -1,10 +1,14 @@
-@extends('layouts.app')
+@extends('mainLayouts.article')
 
 @section('menu_dashboard', 'open active')
 @section('title', 'Crea tu anuncio')
 @section('title-description', 'Administración de los catalogos del sistema')
 
 @section('content')
+    <<div class="title-block">
+        <h1 class="title"> @yield('title') </h1>
+        <p class="title-description"> @yield('title-description') </p>
+    </div>
     <section class="section">
         {!! Form::open(['url' => '/store_product', 'method' => 'post']) !!}
             <div class="card card-block">

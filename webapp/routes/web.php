@@ -65,3 +65,5 @@ Route::prefix('employee')->group(function() {
     Route::get('/logout', 'Auth\EmployeeLoginController@logout')->name('employee.logout');
 });
 
+Route::view('/example', 'product.create');
+

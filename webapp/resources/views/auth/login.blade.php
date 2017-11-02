@@ -99,7 +99,7 @@
                         <p class="text-muted text-center">Do not have an account?
                             <a href="{{ route('register') }}">Sign Up!</a   >
                         </p>
-                    </div>
+                </div>
                 {!! Form::close() !!}
             </div>
         </div>
