@@ -23,7 +23,7 @@ Route::get('/catalog/dataTable', 'CatalogController@indexDataTable');
 
 //LOGIN CESAR
 //Route::get('/create_account', 'PersonalAccountController@create');
-//Route::get('/login_cesar', 'PersonalAccountController@login');
+Route::get('/login_cesar', 'PersonalAccountController@login');
 //Route::post('/create_account', 'PersonalAccountController@store');
 //Route::post('/authenticate', 'PersonalAccountController@authenticate');
 
@@ -35,7 +35,7 @@ Route::post('/store_product', 'ProductController@store');
 //WORKING LOGIN
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/users/logout', 'Auth\AdminLoginController@userLogout')->name('user.logout');
+Route::get('/logout', 'Auth\LoginController@userLogout')->name('user.logout');
 
 //ADMIN
 //Route::prefix('admin')->group(function() {
