@@ -131,6 +131,7 @@
                                         <i class="fa fa-bell icon"></i> Notifications </a>
                                     <a class="dropdown-item" href="#">
                                         <i class="fa fa-gear icon"></i> Settings </a>
+
                                     <div class="dropdown-divider"></div>
                                     <a class="dropdown-item">
 
@@ -141,6 +142,8 @@
                                         </a>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
+                                        </form>
+                                    </a>
                                 </div>
                             </li>
                         </ul>

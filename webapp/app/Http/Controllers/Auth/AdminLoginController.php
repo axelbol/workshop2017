@@ -40,6 +40,6 @@ class AdminLoginController extends Controller
     {
         Auth::guard('admin')->logout();
 
-        return redirect('/login_cesar');
+        return redirect('/');
     }
 }
