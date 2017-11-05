@@ -65,3 +65,16 @@ Route::prefix('employee')->group(function() {
 
 Route::view('/example', 'product.create');
 
+
+
+
+
+
+
+
+
+
+
+
+Route::get('/seller', 'SellerController@index');
+Route::post('/addseller', 'SellerController@store');
