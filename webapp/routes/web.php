@@ -23,7 +23,7 @@ Route::get('/catalog/dataTable', 'CatalogController@indexDataTable');
 
 //LOGIN CESAR
 //Route::get('/create_account', 'PersonalAccountController@create');
-Route::get('/login_cesar', 'PersonalAccountController@login');
+//Route::get('/login_cesar', 'PersonalAccountController@login');
 //Route::post('/create_account', 'PersonalAccountController@store');
 //Route::post('/authenticate', 'PersonalAccountController@authenticate');
 
