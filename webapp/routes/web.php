@@ -28,9 +28,7 @@ Route::get('/login_cesar', 'PersonalAccountController@login');
 //Route::post('/authenticate', 'PersonalAccountController@authenticate');
 
 //PRODUCT
-Route::get('/create_product', 'ProductController@create');
-Route::get('/product', 'ProductController@index');
-Route::post('/store_product', 'ProductController@store');
+Route::resource('product', 'ProductController');
 
 //WORKING LOGIN
 Auth::routes();

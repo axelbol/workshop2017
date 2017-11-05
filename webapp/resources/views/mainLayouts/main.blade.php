@@ -9,7 +9,7 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-    <link rel="stylesheet" href="css/vendor.css">
+    <link rel="stylesheet" href="{{ url('css/vendor.css') }}">
     <!-- Theme initialization -->
     <script>
         var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
@@ -17,11 +17,11 @@
         var themeName = themeSettings.themeName || '';
         if (themeName)
         {
-            document.write('<link rel="stylesheet" id="theme-style" href="css/app-' + themeName + '.css">');
+            document.write('<link rel="stylesheet" id="theme-style" href="http://localhost/workshop2017/webapp/public/css/app-' + themeName + '.css">');
         }
         else
         {
-            document.write('<link rel="stylesheet" id="theme-style" href="css/app.css">');
+            document.write('<link rel="stylesheet" id="theme-style" href="http://localhost/workshop2017/webapp/public/css/app.css">');
         }
     </script>
 </head>
@@ -62,9 +62,9 @@
     ga('create', 'UA-80463319-4', 'auto');
     ga('send', 'pageview');
 </script>
-<script src="js/vendor.js"></script>
-<script src="js/app-template.js"></script>
+<script src="{{ url('js/vendor.js') }}"></script>
+<script src="{{ url('js/app-template.js') }}"></script>
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-<script src="js/main.js"></script>
+<script src="{{ url('js/main.js') }}"></script>
 </body>
 </html>
