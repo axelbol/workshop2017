@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Yajra\Datatables\Facades\Datatables;
 use App\Seller;
 
 class SellerController extends Controller
@@ -64,7 +65,9 @@ class SellerController extends Controller
      */
     public function edit($id)
     {
-        //
+        $seller = Seller::find($id);
+        return view('seller.edit')->with('seller', $seller);
+
     }
 
     /**
@@ -76,7 +79,17 @@ class SellerController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $seller = Seller::find($id);
+        $seller -> name = $request -> name;
+        $seller -> last_name = $request -> last_name;
+        $seller -> address = $request -> address;
+        $seller -> city = $request -> city;
+        $seller -> email = $request -> email;
+        $seller -> phono = $request -> phono;
+        $seller -> save();
+
+        dd($seller);
+
     }
 
     /**
@@ -88,5 +101,15 @@ class SellerController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function view()
+    {
+        return view('seller.view' );
+    }
+
+    public function get_dataTable()
+    {
+        return datatables()->eloquent(Seller::query())->toJson();
     }
 }

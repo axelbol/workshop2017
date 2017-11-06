@@ -125,6 +125,7 @@
                                 </a>
                                 <div class="dropdown-menu profile-dropdown-menu" aria-labelledby="dropdownMenu1">
 
+
                                     <a class="dropdown-item" href="#">
                                         <i class="fa fa-user icon"></i> Editar Perfil </a>
                                     <a class="dropdown-item" href="#">

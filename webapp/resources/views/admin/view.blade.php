@@ -23,7 +23,6 @@
 </table>
 
 
-
 <script src="https://datatables.yajrabox.com/js/jquery.min.js"></script>
 <script src="https://datatables.yajrabox.com/js/bootstrap.min.js"></script>
 <script src="https://datatables.yajrabox.com/js/jquery.dataTables.min.js"></script>
@@ -41,9 +40,6 @@
                 {data: 'email'},
                 {data: 'created_at'}
             ]
-
-
-
         });
     });
 

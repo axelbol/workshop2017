@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Yajra\Dataables\Facades\Datatables;
+use Yajra\Datatables\Facades\Datatables;
 use App\User;
 
 class AdminController extends Controller
