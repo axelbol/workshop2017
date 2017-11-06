@@ -35,6 +35,7 @@
         <div class="mobile-menu-handle"></div>
         @include('mainLayouts.article')
         @include('mainLayouts.footer')
+
     </div>
 </div>
 <!-- Reference block for JS -->
