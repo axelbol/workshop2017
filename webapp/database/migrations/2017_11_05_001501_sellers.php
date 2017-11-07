@@ -19,7 +19,7 @@ class Sellers extends Migration
             $table->string('last_name');
             $table->string('address');
             $table->enum('city', ['La Paz', 'Oruro', 'Potosi', 'Cochabamba', 'Chuquisaca', 'Tarija', 'Pando', 'Beni', 'Santa Cruz']);
-            $table->string('email')->unique();
+            $table->string('email');//->unique();
             $table->string('phono');
             $table->timestamps();
         });
