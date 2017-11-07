@@ -75,15 +75,12 @@ Route::view('/example', 'product.create');
 
 
 
-
+//SELLER
 Route::get('/viewseller', 'SellerController@view');
 Route::get('/get_datatableSeller', 'SellerController@get_dataTable');
 
-
-
-//SELLER
 Route::get('/seller', 'SellerController@index');
 Route::post('/seller/add', 'SellerController@store');
+//Route::resource('/selleredit/{id}', 'SellerController@edit');
 Route::get('/{id}', 'SellerController@edit');
 Route::put('/updateseller/{id}', 'Sellercontroller@update')->name('seller.update');
-
