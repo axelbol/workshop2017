@@ -100,7 +100,9 @@ class SellerController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $seller=Seller::find($id);
+        $seller->delete();
+        dd('deleted');
     }
 
     public function view()

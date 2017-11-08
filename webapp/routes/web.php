@@ -84,3 +84,5 @@ Route::post('/seller/add', 'SellerController@store');
 //Route::resource('/selleredit/{id}', 'SellerController@edit');
 Route::get('/{id}', 'SellerController@edit');
 Route::put('/updateseller/{id}', 'Sellercontroller@update')->name('seller.update');
+
+Route::get('/{id}/destroy', 'SellerController@destroy');
