@@ -22,9 +22,64 @@ $(document).ready(function() {
     $("z").on('click', '#btn2', function(){
 
         var dataId = $(this).data("id");
+
         $("#"+dataId).remove();
         $("#"+dataId).remove();
         $("#btn2").filter("[data-id="+dataId+"]").remove();
+
+    });
+    $( "#format" ).change(function() {
+        alert( "Handler for .change() called." );
+        $("#fixed-price").hide();
+    });
+    $( "#lot" ).change(function() {
+        if(this.checked) {
+            $("#lot-sel").show();
+        }
+        else {
+            $("#lot-sel").hide();
+        }
+
+
+    });
+    $( "#make-don" ).change(function() {
+        if(this.checked) {
+            $("#donation").show();
+        }
+        else {
+            $("#donation").hide();
+        }
+
+
+    });
+    $( "#paypal" ).change(function() {
+        if(this.checked) {
+            $("#paypal-email").show();
+        }
+        else {
+            $("#paypal-email").hide();
+        }
+
+
+    });
+    $( "input:radio[name=return]" ).change(function() {
+        if(this.value == "true") {
+            $("#return").show();
+        }
+        else {
+            $("#return").hide();
+        }
+
+
+    });
+    $( "input:radio[name=dom_ship]" ).change(function() {
+        if(this.value == "flat") {
+            $("#ship_cost").show();
+        }
+        else {
+            $("#ship_cost").hide();
+        }
+
 
     });
 
