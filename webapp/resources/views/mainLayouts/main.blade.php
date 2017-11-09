@@ -24,6 +24,7 @@
             document.write('<link rel="stylesheet" id="theme-style" href="http://localhost/workshop2017/webapp/public/css/app.css">');
         }
     </script>
+
 </head>
 <body>
 <div class="main-wrapper">
@@ -67,5 +68,6 @@
 <script src="{{ url('js/app-template.js') }}"></script>
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="{{ url('js/main.js') }}"></script>
+
 </body>
 </html>

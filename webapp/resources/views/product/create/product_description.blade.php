@@ -1,4 +1,3 @@
-@
 <div class="card card-primary">
     <div class="card-header">
         <div class="header-block">
@@ -8,7 +7,6 @@
     <div class="card-block">
 
         <div class="form-group row">
-            <label name="title" class="col-sm-2 col-form-label">Título</label>
 
             {{ Form::label('title', 'Título', ['class' => 'col-sm-2 col-form-label']) }}
 
@@ -46,20 +44,21 @@
 
             <div class="col-sm-10">
                 <select class="form-control" name="condition">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
+                    <option style="display:none" disabled selected value>Seleccione una opción</option>
+                    <option value="Para estrenar">Para estrenar</option>
+                    <option value="Como nuevo">Como nuevo</option>
+                    <option value="Muy bien">Muy bien</option>
+                    <option value="Bien">Bien</option>
+                    <option value="Aceptable">Aceptable</option>
                 </select>
             </div>
         </div>
 
-        <div class="form-group row">
-            {{ Form::label('con_des', 'Descripción del Estado', ['class' => 'col-sm-2 col-form-label']) }}
+        <div class="form-group row" id="conditiondescription" style="display:none">
+            {{ Form::label('conditiondescription', 'Descripción del Estado', ['class' => 'col-sm-2 col-form-label']) }}
 
             <div class="col-sm-10">
-                {{ Form::textarea('con_des', '', ['class' => 'form-control', 'rows' => '3']) }}
+                {{ Form::textarea('conditiondescription', '', ['class' => 'form-control', 'rows' => '3']) }}
             </div>
         </div>
 
@@ -70,32 +69,23 @@
                 {!! Form::button('Añadir caracteriztica ', ['class' => 'btn btn-primary-outline',
                 'data-toggle' => 'modal',
                 'data-target' => '#specificsModal']); !!}
+                <div class="form-group"></div>
+                <div class="form-group row">
+                    <div id="xd">
+
+                    </div>
+
+                </div>
             </div>
         </div>
 
-        <div class="form-group row">
-            <div class="form-group col-md-2">
 
-            </div>
-            <div class="form-group col-md-2">
-                <x>
-                </x>
-            </div>
-            <div class="form-group col-md-2">
-                <y>
-                </y>
-            </div>
-            <div class="form-group col-md-2">
-                <z>
-                </z>
-            </div>
-        </div>
 
         <div class="form-group row">
-            {{ Form::label('con_des', 'Descripción del Producto', ['class' => 'col-sm-2 col-form-label']) }}
+            {{ Form::label('productdescription', 'Descripción del Producto', ['class' => 'col-sm-2 col-form-label']) }}
 
             <div class="col-sm-10">
-                {{ Form::textarea('pro_desc', '', ['class' => 'form-control', 'rows' => '3']) }}
+                {{ Form::textarea('productdescription', '', ['class' => 'form-control', 'rows' => '3']) }}
             </div>
         </div>
 
