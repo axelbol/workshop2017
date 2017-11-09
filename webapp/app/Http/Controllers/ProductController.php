@@ -36,14 +36,8 @@ class ProductController extends Controller
      */
     public function store(ValidateProduct $request)
     {
-        $product = new Product();
-        $product->title = $request->title;
-        $product->subtitle = $request->subtitle;
-        $product->category = $request->category;
-        $product->condition = $request->condition;
-        $product->description = $request->description;
-        $product->account_id = session('user')->id;
-        dd($product);
+
+        dd($request->all());
     }
 
     /**

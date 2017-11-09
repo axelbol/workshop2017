@@ -59,8 +59,6 @@ $(document).ready(function() {
         else {
             $("#paypal-email").hide();
         }
-
-
     });
     $( "input:radio[name=return]" ).change(function() {
         if(this.value == "true") {
@@ -72,15 +70,27 @@ $(document).ready(function() {
 
 
     });
-    $( "input:radio[name=dom_ship]" ).change(function() {
+    $('select[name=dom_ship]').on('change', function() {
         if(this.value == "flat") {
-            $("#ship_cost").show();
+            $("#shipping").show();
         }
         else {
-            $("#ship_cost").hide();
+            $("#shipping").hide();
         }
 
+    });
+    $( "#free_ship" ).change(function() {
+        if(this.checked) {
+            $("#cost_ship").prop('disabled', true).attr({
+                "value":"0"
+                });
 
+        }
+        else {
+            $("#cost_ship").prop('disabled', false).attr({
+                "value":""
+            });
+        }
     });
 
 });
