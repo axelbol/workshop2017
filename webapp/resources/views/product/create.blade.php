@@ -4,7 +4,7 @@
 
 @section('content')
     <form></form>
-    {!! Form::open(['url' => '/product', 'method' => 'post', 'files' => true]) !!}
+    {!! Form::open(['url' => '/product', 'method' => 'post']) !!}
 
 <div data-spy="scroll" data-target="#navbar-example2" data-offset="0">
 

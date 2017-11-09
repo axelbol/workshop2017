@@ -201,7 +201,7 @@
 
                         <div>
                             <label>
-                                <input class="checkbox" type="checkbox" name="noshipping" value="true">
+                                <input class="checkbox" type="checkbox" name="pickpayment" value="true">
                                 <span>Recibir el pago al momento de recoger el producto</span>
                             </label>
                         </div>
