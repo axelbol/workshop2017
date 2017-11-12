@@ -44,6 +44,8 @@ class SellerController extends Controller
         $seller->email = $request->email;
         $seller->phono =$request->phono;
         $seller->save();
+
+        return view ('seller.save');
     }
 
     /**
@@ -102,7 +104,9 @@ class SellerController extends Controller
     {
         $seller=Seller::find($id);
         $seller->delete();
-        dd('deleted');
+        dd($seller);
+        //return view ('seller.index');
+
     }
 
     public function view()

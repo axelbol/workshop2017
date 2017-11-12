@@ -7,7 +7,7 @@
 @section('content')
 
     <div class="card">
-        {!! Form::open(['url' => '/seller/add', 'method' => 'POST']) !!}
+        {!! Form::open(['url' => '/selleradd', 'method' => 'POST']) !!}
 
         <div class="card-content">
             <div class="row">

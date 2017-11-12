@@ -80,7 +80,7 @@ Route::get('/viewseller', 'SellerController@view');
 Route::get('/get_datatableSeller', 'SellerController@get_dataTable');
 
 Route::get('/seller', 'SellerController@index');
-Route::post('/seller/add', 'SellerController@store');
+Route::post('/selleradd', 'SellerController@store');
 //Route::resource('/selleredit/{id}', 'SellerController@edit');
 Route::get('/{id}', 'SellerController@edit');
 Route::put('/updateseller/{id}', 'Sellercontroller@update')->name('seller.update');
