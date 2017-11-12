@@ -13,14 +13,9 @@ class ValidateProduct extends FormRequest
      */
     public function authorize()
     {
-        if(session('user'))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+
+        return true;
+
     }
 
     /**
