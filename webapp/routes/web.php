@@ -53,7 +53,7 @@ Route::get('/admin_logout', 'Auth\AdminLoginController@logout')->name('admin.log
 
 //list account
 //I don't know why it doesn`t work inside group route->admin
-Route::get('/view', 'AdminController@view');
+Route::get('/viewuser', 'AdminController@view');
 Route::get('/get_datatable', 'AdminController@get_dataTable');
 //EMPLOYEE
 Route::prefix('employee')->group(function() {
@@ -65,24 +65,17 @@ Route::prefix('employee')->group(function() {
 
 Route::view('/example', 'product.create');
 
-
-
-
-
-
-
-
-
-
-
 //SELLER
 Route::get('/viewseller', 'SellerController@view');
 Route::get('/get_datatableSeller', 'SellerController@get_dataTable');
 
-Route::get('/seller', 'SellerController@index');
-Route::post('/selleradd', 'SellerController@store');
-//Route::resource('/selleredit/{id}', 'SellerController@edit');
-Route::get('/{id}', 'SellerController@edit');
-Route::put('/updateseller/{id}', 'Sellercontroller@update')->name('seller.update');
+//Route::get('/seller', 'SellerController@index');
+//Route::post('/selleradd', 'SellerController@store');
 
-Route::get('/{id}/destroy', 'SellerController@destroy');
+//Route::resource('/selleredit/{id}', 'SellerController@edit');
+
+//Route::get('/{id}', 'SellerController@edit');
+//Route::put('/updateseller/{id}', 'Sellercontroller@update')->name('seller.update');
+
+Route::get('/{id}/destroy', 'SellerController@destroy')->name('seller.destroy');
+Route::resource('seller', 'SellerController');

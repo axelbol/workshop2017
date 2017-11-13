@@ -6,8 +6,8 @@
 @extends('adminLayouts.app')
 
 @section('usuarios', 'open active')
-@section('title', 'Usuarios')
-@section('title-description', 'Lista de usuarios registrados')
+@section('title', 'Vendedores')
+@section('title-description', 'Lista de vendedores registrados')
 @section('content')
     <section class="section">
 
@@ -21,6 +21,7 @@
                     <td> city </td>
                     <td> email </td>
                     <td> phono </td>
+                    <td> phono </td>
                 </tr>
             </thead>
         </table>
@@ -30,13 +31,17 @@
         <script src="https://datatables.yajrabox.com/js/bootstrap.min.js"></script>
         <script src="https://datatables.yajrabox.com/js/jquery.dataTables.min.js"></script>
         <script src="https://datatables.yajrabox.com/js/datatables.bootstrap.js"></script>
+
         <script type="text/javascript">
+
+
 
             $(function() {
                 $('#sellers-table').DataTable({
                     processing: true,
                     serverSide: true,
                     ajax: 'http://localhost/workshop2017/webapp/public/get_datatableSeller',
+
                     columns: [
                         {data: 'id'},
                         {data: 'name'},
@@ -45,9 +50,14 @@
                         {data: 'city'},
                         {data: 'email'},
                         {data: 'phono'},
+                        {data:  null,
+                         defaultContent:"<a href=\"{{url('/home')}}\"> <button class='btn btn-info'>axel</button></a>"},
+
                     ]
+
                 });
             });
+
 
         </script>
 
