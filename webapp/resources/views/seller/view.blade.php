@@ -16,8 +16,13 @@
             <tr>
                 <td> id </td>
                 <td> name </td>
+                <td> last_name </td>
+                <td> address </td>
+                <td> city </td>
                 <td> email </td>
-                <td> created_at </td>
+                <td> phono </td>
+                <td> editar </td>
+                <td> eliminar </td>
             </tr>
             </thead>
         </table>
@@ -34,14 +39,25 @@
                     processing: true,
                     serverSide: true,
                     ajax: 'http://localhost/workshop2017/webapp/public/get_datatableSeller',
-                    @foreach($sellers as $seller)
                     columns: [
                         {data: 'id'},
                         {data: 'name'},
+                        {data: 'last_name'},
+                        {data: 'address'},
+                        {data: 'city'},
                         {data: 'email'},
-                        {data: 'created_at'}
+                        {data: 'phono'},
+                        {
+                            "mRender": function(data, type, row) {
+                                return '<a class="btn btn-small btn-primary" href=providers/' + row.id + '>Ver</a>';
+                            }
+                        },
+                        {
+                            "mRender": function(data, type, row) {
+                                return '<a class="btn btn-small btn-primary" href=providers/' + row.id + '/edit>Editar</a>';
+                            }
+                        }
                     ]
-                    @@endforeach
                 });
             });
 
