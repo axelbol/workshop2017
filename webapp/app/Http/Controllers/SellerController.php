@@ -111,11 +111,13 @@ class SellerController extends Controller
 
     public function view()
     {
-        return view('seller.view' );
+        return view('seller.view');
     }
 
-    public function get_dataTable()
+    public function get_dataTableSeller()
     {
         return datatables()->eloquent(Seller::query())->toJson();
+        //$sellers = Seller::All();
+        //return view('seller.view', compact('sellers'));
     }
 }

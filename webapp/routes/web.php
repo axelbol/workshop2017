@@ -67,7 +67,7 @@ Route::view('/example', 'product.create');
 
 //SELLER
 Route::get('/viewseller', 'SellerController@view');
-Route::get('/get_datatableSeller', 'SellerController@get_dataTable');
+Route::get('/get_datatableSeller', 'SellerController@get_dataTableSeller');
 
 //Route::get('/seller', 'SellerController@index');
 //Route::post('/selleradd', 'SellerController@store');

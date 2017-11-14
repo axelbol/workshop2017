@@ -12,6 +12,33 @@ $(document).ready(function() {
         ]
     });
 
+    $('#sellersTable').DataTable({
+        ajax: {
+            url: '/get_datatableSeller',
+            dataSrc: ''
+        },
+        columns: [
+            { data: 'id' },
+            { data: 'name' },
+            { data: 'last_name' },
+            { data: 'phono' },
+            { data: 'email' },
+            {
+                "mRender": function(data, type, row) {
+                    return '<a class="btn btn-small btn-primary" href=providers/' + row.id + '>Ver</a>';
+                }
+            },
+            {
+                "mRender": function(data, type, row) {
+                    return '<a class="btn btn-small btn-primary" href=providers/' + row.id + '/edit>Editar</a>';
+                }
+            }
+        ]
+    });
+
+
+
+
     $("#btn1").click(function(){
 
         $("#xd").append("<div id='"+aa+"' class='row'><input id='"+aa+"'  name='feature[]' class='form-control col-sm-4' type='text' readonly value='"+$('#trait').val()+"'>" +
