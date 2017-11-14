@@ -49,14 +49,14 @@
                         {data: 'phono'},
                         {
                             "mRender": function(data, type, row) {
-                                return '<a class="btn btn-small btn-primary" href=providers/' + row.id + '>Ver</a>';
+                                return '<a class="btn btn-small btn-info" href=seller/' + row.id + '/edit>Editar</a>';
                             }
                         },
                         {
                             "mRender": function(data, type, row) {
-                                return '<a class="btn btn-small btn-primary" href=providers/' + row.id + '/edit>Editar</a>';
+                                return '<a class="btn btn-small btn-danger" href=' + row.id + '/destroy>Eliminar</a>';
                             }
-                        }
+                        },
                     ]
                 });
             });
