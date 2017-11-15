@@ -6,8 +6,8 @@
 @extends('adminLayouts.app')
 
 @section('usuarios', 'open active')
-@section('title', 'Usuarios')
-@section('title-description', 'Lista de usuarios registrados')
+@section('title', 'VENDEDORES')
+@section('title-description', 'Lista de vendedores registrados')
 @section('content')
     <section class="section">
 
@@ -15,14 +15,14 @@
             <thead>
             <tr>
                 <td> id </td>
-                <td> name </td>
-                <td> last_name </td>
-                <td> address </td>
-                <td> city </td>
-                <td> email </td>
-                <td> phono </td>
-                <td> editar </td>
-                <td> eliminar </td>
+                <td> Nombre </td>
+                <td> Apellido </td>
+                <td> Dirección </td>
+                <td> Ciudad </td>
+                <td> Correo </td>
+                <td> Teléfono </td>
+                <td> Editar </td>
+                <td> Eliminar </td>
             </tr>
             </thead>
         </table>
