@@ -13,7 +13,7 @@ class SellerSeeder extends Seeder
     public function run()
     {
         //$faker = Faker::create();
-        for($i=0; $i<100; $i++)
+        for($i=0; $i<50; $i++)
         {
             $seller = new Seller;
             $seller->name = "Axel";

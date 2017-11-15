@@ -10,10 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {    return view('welcome');});
 
 
 
@@ -79,3 +76,6 @@ Route::get('/get_datatableSeller', 'SellerController@get_dataTableSeller');
 
 Route::get('/{id}/destroy', 'SellerController@destroy')->name('seller.destroy');
 Route::resource('seller', 'SellerController');
+
+//TRIAL PRODUCT
+Route::get('/productTrial', 'ProductTrialController@index')->name('trial.index');
