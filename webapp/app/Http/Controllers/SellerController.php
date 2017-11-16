@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Yajra\Datatables\Facades\Datatables;
 use App\Seller;
 
+use Laracasts\Flash\Flash;
+
 class SellerController extends Controller
 {
     /**
@@ -45,7 +47,8 @@ class SellerController extends Controller
         $seller->phono =$request->phono;
         $seller->save();
 
-        return view ('seller.save');
+
+        return view ('product.create');
     }
 
     /**
@@ -90,7 +93,10 @@ class SellerController extends Controller
         $seller -> phono = $request -> phono;
         $seller -> save();
 
-        dd($seller);
+        //dd($seller);
+
+        Flash::success("Se registro al vendedor de forma exitosa");
+        return redirect()->route('viewseller');
 
     }
 
@@ -104,8 +110,9 @@ class SellerController extends Controller
     {
         $seller=Seller::find($id);
         $seller->delete();
-        dd($seller);
-        //return view ('seller.index');
+
+        //dd($seller);
+        return redirect()->route('viewseller');
 
     }
 

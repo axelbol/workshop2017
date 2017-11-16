@@ -63,7 +63,7 @@ Route::prefix('employee')->group(function() {
 Route::view('/example', 'product.create');
 
 //SELLER
-Route::get('/viewseller', 'SellerController@view');
+Route::get('/viewseller', 'SellerController@view')->name('viewseller');
 Route::get('/get_datatableSeller', 'SellerController@get_dataTableSeller');
 
 //Route::get('/seller', 'SellerController@index');
