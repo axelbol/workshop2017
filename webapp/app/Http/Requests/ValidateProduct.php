@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Request;
 
 class ValidateProduct extends FormRequest
 {
@@ -24,9 +25,54 @@ class ValidateProduct extends FormRequest
      * @return array
      */
     public function rules()
-    {
+    {/*
         return [
-            //
-        ];
+                'title' => 'required',
+                'subtitle'=> '',
+                'category'=> '',
+                'isbn'=> '',
+                'condition'=> '',
+                'conditiondescription' => '',
+                'productdescription'=> '',
+                'format',
+                'duration',
+                'ad',
+                'buynowprice',
+                'allowoffer',
+                'atleastoffer',
+                'atleastofferis',
+                'lowoffer',
+                'lowofferis',
+                'startprice',
+                'buyprice',
+                'reserveprice',
+                'cuantity',
+                'lot',
+                'cuantitylot',
+                'private',
+                'donation',
+                'paypal',
+                'emailpayment',
+                'pickpayment',
+                'paymentdescription',
+                'return' => 'required',
+                'devolutiontime',
+                'refund',
+                'returnshipment',
+                'returndetails',
+                'restitutionfee',
+                'domesticshipment',
+                'shipmentservice',
+                'shipmentcost',
+                'freeshipment',
+                'packagetype',
+                'x',
+                'y',
+                'z',
+                'kilograms',
+                'grams',
+                'localization'
+        ];*/
+        return [];
     }
 }

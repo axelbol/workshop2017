@@ -210,5 +210,14 @@ $(document).ready(function() {
 
 
     });
+    var options = {
+        success: function () {
+            alert('Thanks for your comment!');
+        }
+    };
+
+    // pass options to ajaxForm
+    $('#ProductForm').ajaxForm(options);
+
 
 });

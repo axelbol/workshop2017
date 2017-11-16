@@ -67,7 +67,10 @@
 <script src="{{ url('js/vendor.js') }}"></script>
 <script src="{{ url('js/app-template.js') }}"></script>
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="http://malsup.github.com/jquery.form.js"></script>
+<script src="//cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
 <script src="{{ url('js/main.js') }}"></script>
+<script src="{{ url('js/validateForm.js') }}"></script>
 
 </body>
 </html>

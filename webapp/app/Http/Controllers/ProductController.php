@@ -36,7 +36,8 @@ class ProductController extends Controller
      */
     public function store(ValidateProduct $request)
     {
-        $x = new Product($request->all());
+
+       // $x = new Product($request->all());
         /*
         $product->title = $request->title;
         $product->subtitle = $request->subtitle ;
@@ -84,8 +85,8 @@ class ProductController extends Controller
         $product->grams = $request->grams ;
         $product->localization = $request->localization ;*/
 
-        dd($x);
-        $x->save();
+        //dd($x);
+        //$x->save();
     }
 
     /**

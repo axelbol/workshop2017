@@ -15,16 +15,16 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title')->nullable($value = true);
-            $table->string('subtitle')->nullable($value = true);
-            $table->string('category')->nullable($value = true);
-            $table->string('isbn')->nullable($value = true);
-            $table->string('condition')->nullable($value = true);
-            $table->text('conditiondescription')->nullable($value = true);
-            $table->text('productdescription')->nullable($value = true);
-            $table->string('format')->nullable($value = true);
-            $table->string('duration')->nullable($value = true);
-            $table->string('ad')->nullable($value = true);
+            $table->string('title');
+            $table->string('subtitle');
+            $table->string('category');
+            $table->string('isbn');
+            $table->string('condition');
+            $table->text('conditiondescription');
+            $table->text('productdescription');
+            $table->string('format');
+            $table->string('duration');
+            $table->string('ad');
 
             //fixed price colums
             $table->integer('buynowprice')->nullable($value = true);
