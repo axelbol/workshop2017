@@ -11,7 +11,7 @@
     @include('product.create.product_description')
     @include('product.create.sale_details')
     @include('product.create.shipment_details')
-    @include('flash::message')
+
 </div>
    </form>
 @include('product.modals.specifics')
