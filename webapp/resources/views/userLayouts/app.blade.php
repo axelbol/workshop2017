@@ -273,6 +273,10 @@
                         <p class="title-description"> @yield('title-description') </p>
                     </div>
                     @yield('content')
+
+                    @include('flash::message')
+
+
                 </article>
                 <footer class="footer">
                     <div class="footer-block buttons">
