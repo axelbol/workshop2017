@@ -1,33 +1,31 @@
 <!doctype html>
 <html class="no-js" lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <title> User Panel @yield('title') </title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="apple-touch-icon" href="apple-touch-icon.png">
-        <!-- Place favicon.ico in the root directory -->
-        <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
-        <link rel="stylesheet" href="css/vendor.css">
-
-
-
-        <!-- Theme initialization -->
-        <script>
-            var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title> User Panel @yield('title') </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+    <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="{{ url('css/vendor.css') }}">
+    <!-- Theme initialization -->
+    <script>
+        var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
             {};
-            var themeName = themeSettings.themeName || '';
-            if (themeName)
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="css/app-' + themeName + '.css">');
-            }
-            else
-            {
-                document.write('<link rel="stylesheet" id="theme-style" href="css/app.css">');
-            }
-        </script>
-    </head>
+        var themeName = themeSettings.themeName || '';
+        if (themeName)
+        {
+            document.write('<link rel="stylesheet" id="theme-style" href="http://localhost/workshop2017/webapp/public/css/app-' + themeName + '.css">');
+        }
+        else
+        {
+            document.write('<link rel="stylesheet" id="theme-style" href="http://localhost/workshop2017/webapp/public/css/app.css">');
+        }
+    </script>
+
+</head>
     <body>
         <div class="main-wrapper">
             <div class="app" id="app">
@@ -74,7 +72,7 @@
                                         <li>
                                             <a href="" class="notification-item">
                                                 <div class="img-col">
-                                                    <div class="img" style="background-image: url('assets/faces/3.jpg')"></div>
+                                                    <div class="img" style="background-image: {{ url('assets/faces/3.jpg') }}"></div>
                                                 </div>
                                                 <div class="body-col">
                                                     <p>
@@ -86,7 +84,7 @@
                                         <li>
                                             <a href="" class="notification-item">
                                                 <div class="img-col">
-                                                    <div class="img" style="background-image: url('assets/faces/5.jpg')"></div>
+                                                    <div class="img" style="background-image: {{  url('assets/faces/5.jpg')}}"></div>
                                                 </div>
                                                 <div class="body-col">
                                                     <p>
@@ -98,7 +96,7 @@
                                         <li>
                                             <a href="" class="notification-item">
                                                 <div class="img-col">
-                                                    <div class="img" style="background-image: url('assets/faces/8.jpg')"></div>
+                                                    <div class="img" style="background-image: {{ url('assets/faces/8.jpg') }}"></div>
                                                 </div>
                                                 <div class="body-col">
                                                     <p>
@@ -391,13 +389,13 @@
             ga('create', 'UA-80463319-4', 'auto');
             ga('send', 'pageview');
         </script>
-
-        <script src="js/vendor.js"></script>
-        <script src="js/app-template.js"></script>
+        <script src="{{ url('js/vendor.js') }}"></script>
+        <script src="{{ url('js/app-template.js') }}"></script>
         <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-        <script src="js/main.js"></script>
-
-        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+        <script src="http://malsup.github.com/jquery.form.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+        <script src="{{ url('js/main.js') }}"></script>
+        <script src="{{ url('js/validateForm.js') }}"></script>
 
     </body>
 </html>
