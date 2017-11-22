@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\ProductTrial;
+use App\Cart;
+
+use App\Http\Requests;
+use Session;
 class ProductTrialController extends Controller
 {
     /**
@@ -16,6 +20,31 @@ class ProductTrialController extends Controller
         $products = ProductTrial::all();
         return view('welcome', ['products' => $products]);
     }
+
+    public function addtocart(Request $request, $id)
+    {
+        $product = ProductTrial::find($id);
+        $oldCart = Session::has('cart') ? Session::get('cart'):null;
+        $cart = new Cart($oldCart);
+        $cart->add($product, $product->id);
+
+        $request->session()->put('cart', $cart);
+        //dd($request->session()->get('cart'));
+        return redirect()->route('trial.index');
+    }
+
+    public function shoppingcart()
+    {
+        if(!Session::has('cart'))
+        {
+            return view ('shop.shoppingCart');
+        }
+        $oldCart = Session::get('cart');
+        $cart = new  Cart($oldCart);
+        return view('shop.shoppingCart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
+    }
+
+
 
     /**
      * Show the form for creating a new resource.
