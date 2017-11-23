@@ -148,6 +148,30 @@ class ProductController extends Controller
     }
     public function productData()
     {
-        return Datatables::of(Product::query())->make(true);
+        $product = Product::select(['id', 'title', 'format', 'condition', 'productdescription']);
+
+        return Datatables::of($product)
+            ->addColumn('action', function ($product) {
+                //return '<a href="#edit-'.$product->id.'" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
+                return "
+                        <div class='item-actions-block'>
+
+
+                                    <a class='remove' href='' data-toggle='modal' data-target='#confirm-modal'>
+                                        <i class='fa fa-trash-o '></i>
+                                    </a>                                
+
+                        </div>
+                        <div class='item-actions-block'>
+                        <a class='edit' href='item-editor.html'>
+                                        <i class='fa fa-pencil'></i>
+                                    </a>
+                        </div>
+                        
+                        ";
+            })
+            ->editColumn('id', 'ID: {{$id}}')
+            ->removeColumn('password')
+            ->make(true);
     }
 }

@@ -71,6 +71,7 @@
 <script src="//cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
 <script src="{{ url('js/main.js') }}"></script>
 <script src="{{ url('js/validateForm.js') }}"></script>
+
 @stack('ProductDataTable')
 
 </body>

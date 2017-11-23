@@ -26,6 +26,7 @@
                                             <th>Formato</th>
                                             <th>Estado</th>
                                             <th>Descripcion</th>
+                                            <th></th>
                                         </tr>
                                     </thead>
                                 </table>
@@ -49,6 +50,7 @@
                     { data: 'format', name: 'format' },
                     { data: 'condition', name: 'condition' },
                     { data: 'productdescription', name: 'productdescription' },
+                    {data: 'action', name: 'action', orderable: false, searchable: false}
                 ]
             });
         });
