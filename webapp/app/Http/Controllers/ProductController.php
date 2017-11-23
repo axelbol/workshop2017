@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Yajra\Datatables\Datatables;
 use App\Http\Requests\ValidateProduct;
 use App\Product;
 use App\AuctionMode;
@@ -145,5 +145,9 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         //
+    }
+    public function productData()
+    {
+        return Datatables::of(Product::query())->make(true);
     }
 }
