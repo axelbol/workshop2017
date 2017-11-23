@@ -62,7 +62,7 @@ class ProductTrialSeeder extends Seeder
 
         $trial = new ProductTrial;
         $trial->imagePath = "https://brain-images-ssl.cdn.dixons.com/8/4/10141248/l_10141248_001.jpg";
-        $trial->title = "playstation 4";
+        $trial->title = "PLAY STATION 4";
         $trial->description="Trial VI";
         $trial->price=70;
         $trial->save();

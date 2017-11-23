@@ -156,9 +156,9 @@
                 </li>
             </ul>
         </li>
-        <li>
-            <a href="https://github.com/modularcode/modular-admin-html">
-                <i class="fa fa-github-alt"></i> Working on it </a>
+        <li class="@yield('carrito','')">>
+            <a href="#">
+                <i class="fa fa-github-alt"></i> Carrito de compras </a>
         </li>
     </ul>
 </nav>

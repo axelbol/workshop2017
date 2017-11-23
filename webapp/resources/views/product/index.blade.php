@@ -8,6 +8,6 @@
         <p class="title-description"> @yield('title-description') </p>
     </div>
     <section class="section">
-        asd
+        REGISTRO EXITOSO
     </section>
 @endsection

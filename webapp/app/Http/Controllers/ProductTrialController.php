@@ -5,9 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\ProductTrial;
 use App\Cart;
+use App\Order;
+
+use App\User;
 
 use App\Http\Requests;
 use Session;
+use Auth;
 class ProductTrialController extends Controller
 {
     /**
@@ -42,6 +46,32 @@ class ProductTrialController extends Controller
         $oldCart = Session::get('cart');
         $cart = new  Cart($oldCart);
         return view('shop.shoppingCart', ['products' => $cart->items, 'totalPrice' => $cart->totalPrice]);
+    }
+
+    public function save(Request $request)
+    {
+        $oldCart = Session::get('cart');
+        $cart = new Cart($oldCart);
+
+        $order = new Order();
+        $order->cart = serialize($cart);
+
+        Auth::user()->orders()->save($order);
+
+        return view('product.index');
+
+    }
+
+    public function profile()
+    {
+        $orders = Auth::user()->orders;
+        $orders->transform(function($order, $key){
+            $order->cart = unserialize($order->cart);
+            return $order;
+        });
+        return view('profile', ['orders'=>$orders]);
+
+
     }
 
 

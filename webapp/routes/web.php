@@ -81,3 +81,7 @@ Route::resource('seller', 'SellerController');
 Route::get('/productTrial', 'ProductTrialController@index')->name('trial.index');
 Route::get('/addtocart/{id}', 'ProductTrialController@addtocart')->name('product.addtocart');
 Route::get('/shoppingcart', 'ProductTrialController@shoppingcart')->name('product.shoppingcart');
+
+Route::post('/savecart', 'ProductTrialController@save')->name('product.save');
+
+Route::get('/profile', 'ProductTrialController@profile')->name('profile');
