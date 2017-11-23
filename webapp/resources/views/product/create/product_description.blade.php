@@ -43,7 +43,7 @@
             {{ Form::label('condition', 'Estado', ['class' => 'col-sm-2 col-form-label']) }}
 
             <div class="col-sm-10">
-                <select class="form-control" name="condition">
+                <select class="form-control" name="condition" id="condition">
                     <option style="display:none" disabled selected value>Seleccione una opción</option>
                     <option value="Para estrenar">Para estrenar</option>
                     <option value="Como nuevo">Como nuevo</option>

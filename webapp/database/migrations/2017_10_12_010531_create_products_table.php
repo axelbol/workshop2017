@@ -14,7 +14,10 @@ class CreateProductsTable extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
+
             $table->increments('id');
+
+            //Product description
             $table->string('title');
             $table->string('subtitle');
             $table->string('category');
@@ -22,59 +25,21 @@ class CreateProductsTable extends Migration
             $table->string('condition');
             $table->text('conditiondescription');
             $table->text('productdescription');
+
+            //Selling format
             $table->string('format');
-            $table->string('duration');
-            $table->string('ad');
 
-            //fixed price colums
-            $table->integer('buynowprice')->nullable($value = true);
-            $table->boolean('allowoffer')->nullable($value = true);
-            $table->boolean('atleastoffer')->nullable($value = true);
-            $table->integer('atleastofferis')->nullable($value = true);
-            $table->boolean('lowoffer')->nullable($value = true);
-            $table->integer('lowofferis')->nullable($value = true);
+            //Set a product as private
+            $table->boolean('private');
 
-            //auction mode
-            $table->integer('startprice')->nullable($value = true);
-            $table->integer('buyprice')->nullable($value = true);
-            $table->integer('reserveprice')->nullable($value = true);
+            //Any donations
+            $table->boolean('donation');
 
+            //devolution
+            $table->boolean('return');
 
-            $table->integer('cuantity')->nullable($value = true);
-            $table->boolean('lot')->nullable($value = true);
-            $table->integer('cuantitylot')->nullable($value = true);
-            $table->boolean('private')->nullable($value = true);
-            $table->boolean('donation')->nullable($value = true);
-
-            //payment options
-            $table->boolean('paypal')->nullable($value = true);
-            $table->string('emailpayment')->nullable($value = true);
-            $table->boolean('pickpayment')->nullable($value = true);
-            $table->text('paymentdescription')->nullable($value = true);
-
-            //devolutions
-            $table->boolean('return')->nullable($value = true);
-            $table->integer('devolutiontime')->nullable($value = true);
-            $table->string('refund')->nullable($value = true);
-            $table->string('returnshipment')->nullable($value = true);
-            $table->string('returndetails')->nullable($value = true);
-            $table->string('restitutionfee')->nullable($value = true);
-
-            //shipping details
-            $table->string('domesticshipment')->nullable($value = true);
-            $table->string('shipmentservice')->nullable($value = true);
-            $table->integer('shipmentcost')->nullable($value = true);
-            $table->boolean('freeshipment')->nullable($value = true);
-
-            //package details
-            $table->string('packagetype')->nullable($value = true);
-            $table->integer('x')->nullable($value = true);
-            $table->integer('y')->nullable($value = true);
-            $table->integer('z')->nullable($value = true);
-            $table->integer('kilograms')->nullable($value = true);
-            $table->integer('grams')->nullable($value = true);
-
-            $table->string('localization')->nullable($value = true);
+            //Item location
+            $table->string('localization');
 
             /*
             $table->integer('account_id')->unsigned();

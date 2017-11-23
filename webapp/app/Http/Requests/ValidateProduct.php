@@ -27,7 +27,7 @@ class ValidateProduct extends FormRequest
     public function rules()
     {
         return [
-                'title' => 'required',
+                'title' => '',
                 'subtitle'=> '',
                 'category'=> '',
                 'isbn'=> '',
@@ -55,7 +55,7 @@ class ValidateProduct extends FormRequest
                 'emailpayment',
                 'pickpayment',
                 'paymentdescription',
-                'return' => 'required',
+                'return' => '',
                 'devolutiontime',
                 'refund',
                 'returnshipment',

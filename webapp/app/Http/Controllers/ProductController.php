@@ -4,6 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ValidateProduct;
 use App\Product;
+use App\AuctionMode;
+use App\Devolution;
+use App\Donation;
+use App\FixedPrice;
+use App\Package;
+use App\Payment;
+use App\Schedule;
+use App\Shipping;
+use App\Storage;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -37,55 +46,59 @@ class ProductController extends Controller
     public function store(ValidateProduct $request)
     {
 
-       // $x = new Product($request->all());
-        /*
-        $product->title = $request->title;
-        $product->subtitle = $request->subtitle ;
-        $product->category = $request->category ;
-        $product->isbn = $request->isbn ;
-        $product->condition = $request->condition ;
-        $product->conditiondescription = $request->conditiondescription ;
-        $product->productdescription = $request->productdescription ;
-        $product->format = $request->format;
-        $product->duration = $request->duration ;
-        $product->ad = $request->ad ;
-        $product->buynowprice = $request->buynowprice ;
-        $product->allowoffer = $request->allowoffer ;
-        $product->atleastoffer = $request->atleastoffer ;
-        $product->atleastofferis = $request->atleastofferis ;
-        $product->lowoffer = $request->lowoffer ;
-        $product->lowofferis = $request->lowofferis ;
-        $product->startprice = $request->startprice ;
-        $product->buyprice = $request->buyprice ;
-        $product->reserveprice = $request->reserveprice ;
-        $product->cuantity = $request->cuantity ;
-        $product->lot = $request->lot ;
-        $product->cuantitylot = $request->cuantitylot ;
-        $product->private = $request->private ;
-        $product->donation = $request->donation ;
-        $product->paypal = $request->paypal ;
-        $product->emailpayment = $request->emailpayment ;
-        $product->pickpayment = $request->pickpayment ;
-        $product->paymentdescription = $request->paymentdescription ;
-        $product->return = $request->return ;
-        $product->devolutiontime = $request->devolutiontime ;
-        $product->refund = $request->refund ;
-        $product->returnshipment = $request->returnshipment ;
-        $product->returndetails = $request->returndetails ;
-        $product->restitutionfee = $request->restitutionfee ;
-        $product->domesticshipment = $request->domesticshipment ;
-        $product->shipmentservice = $request->shipmentservice ;
-        $product->shipmentcost = $request->shipmentcost ;
-        $product->freeshipment = $request->freeshipment ;
-        $product->packagetype = $request->packagetype ;
-        $product->x = $request->x ;
-        $product->y = $request->y ;
-        $product->z = $request->z ;
-        $product->kilograms = $request->kilograms ;
-        $product->grams = $request->grams ;
-        $product->localization = $request->localization ;*/
+        $Product = new Product($request->all());
+        $Product->save();
+        if ($Product->format == "Precio fijo")
+        {
+            $FixedPrice = new FixedPrice($request->all());
+            $FixedPrice->product()->associate($Product);
+            $FixedPrice->save();
+        }
+        if ($Product->format == "Subasta")
+        {
+            $AuctionMode = new AuctionMode($request->all());
+            $AuctionMode->product()->associate($Product);
+            $AuctionMode->save();
+        }
+        if ($Product->donation == "true")
+        {
+            $Donation = new Donation($request->all());
+            $Donation->product()->associate($Product);
+            $Donation->save();
+        }
+        if($Product->return == "true")
+        {
+            $Devolution = new Devolution($request->all());
+            $Devolution->product()->associate($Product);
+            $Devolution->save();
+        }
 
-        //dd($x);
+        $Package = new Package($request->all());
+        $Package->product()->associate($Product);
+        $Package->save();
+
+        $Payment = new Payment($request->all());
+        $Payment->product()->associate($Product);
+        $Payment->save();
+
+        $Schedule = new Schedule($request->all());
+        $Schedule->product()->associate($Product);
+        $Schedule->save();
+
+        $Shipping = new Shipping($request->all());
+        if($Shipping->freeshipment == "true")
+        {
+            $Shipping->shipmentcost = 0;
+        }
+        $Shipping->product()->associate($Product);
+        $Shipping->save();
+
+        $Storage = new Storage($request->all());
+        $Storage->product()->associate($Product);
+        $Storage->save();
+
+
+        dd($request->all());
         //$x->save();
     }
 

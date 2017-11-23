@@ -17,12 +17,22 @@ $().ready(function () {
                 required: true
             },
             conditiondescription:{
-                required: true
-            },
+                required: check()
+                },
             productdescription:{
                 required: true
             }
 
-        }
+        },
     })
+
+    function check () {
+        if ($("#condition").val() == "Para estrenar") {
+            alert("se selecciono");
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
 });

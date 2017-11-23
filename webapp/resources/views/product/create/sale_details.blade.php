@@ -119,10 +119,10 @@
             </div>
 
             <div class="form-group row" id="sell-format" style="display:none">
-                {{ Form::label('cuantity', 'Cantidad', ['class' => 'col-sm-2 col-form-label']) }}
+                {{ Form::label('quantity', 'Cantidad', ['class' => 'col-sm-2 col-form-label']) }}
 
                 <div class="col-sm-10">
-                    {{ Form::text('cuantity', '', ['class' => 'form-control col-sm-2', 'placeholder' => '', 'id' => 'cuantity']) }}
+                    {{ Form::text('quantity', '', ['class' => 'form-control col-sm-2', 'placeholder' => '', 'id' => 'cuantity']) }}
                     <div class="form-check">
                         <label>
                             <input id="lot" class="checkbox" type="checkbox" name="lot" value="true">
@@ -130,8 +130,8 @@
                         </label>
                     </div>
                     <div id="lot-sel" style="display:none" class="row">
-                        {{ Form::label('cuantitylot', 'Cantidad de articulos en el lote', ['class' => 'col-sm-4 col-form-label']) }}
-                        {{ Form::text('cuantitylot', '', ['class' => 'form-control col-sm-2', 'placeholder' => '', 'id' => 'cuantity_lot']) }}
+                        {{ Form::label('quantitylot', 'Cantidad de articulos en el lote', ['class' => 'col-sm-4 col-form-label']) }}
+                        {{ Form::text('quantitylot', '', ['class' => 'form-control col-sm-2', 'placeholder' => '', 'id' => 'cuantity_lot']) }}
                     </div>
                 </div>
             </div>
