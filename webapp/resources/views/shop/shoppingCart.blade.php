@@ -35,7 +35,7 @@
         <hr>
 
         <div class="form-group">
-            {!! Form::submit('Registrar', ['class' => 'btn btn-info btn-fill pull-right']) !!}
+            {!! Form::submit('COMPRAR', ['class' => 'btn btn-info btn-fill pull-right']) !!}
         </div>
 
 
