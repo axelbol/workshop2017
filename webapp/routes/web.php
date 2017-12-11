@@ -12,8 +12,6 @@
 */
 //Route::get('/', function () {    return view('welcome');});
 
-
-
 //CATALOG
 Route::get('/catalog', 'CatalogController@index');
 Route::get('/catalog/dataTable', 'CatalogController@indexDataTable');
@@ -47,7 +45,6 @@ Route::get('/admin', 'Auth\AdminLoginController@showLoginForm')->name('admin.log
 Route::post('/login_admin_submit', 'Auth\AdminLoginController@login')->name('admin.login.submit');
 Route::get('/admin_dashboard', 'AdminController@index')->name('admin.dashboard');
 Route::get('/admin_logout', 'Auth\AdminLoginController@logout')->name('admin.logout');
-
 
 //list account
 //I don't know why it doesn`t work inside group route->admin
