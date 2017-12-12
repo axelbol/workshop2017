@@ -57,6 +57,12 @@
                                 return '<a class="btn btn-small btn-danger" href=' + row.id + '/destroy>Eliminar</a>';
                             }
                         },
+
+                        {
+                            "mRender": function(data, type, row) {
+                                return '<a class="btn btn-small btn-danger" href=' + row.id + '/pdf>PDF</a>';
+                            }
+                        },
                     ]
                 });
             });

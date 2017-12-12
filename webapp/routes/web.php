@@ -68,7 +68,7 @@ Route::get('/get_datatableSeller', 'SellerController@get_dataTableSeller');
 //Route::post('/selleradd', 'SellerController@store');
 
 //Route::resource('/selleredit/{id}', 'SellerController@edit');
-
+Route::get('/{id}/pdf', 'SellerController@pdf')->name('pdf');
 //Route::get('/{id}', 'SellerController@edit');
 //Route::put('/updateseller/{id}', 'Sellercontroller@update')->name('seller.update');
 
@@ -82,13 +82,13 @@ Route::get('/shoppingcart', 'ProductTrialController@shoppingcart')->name('produc
 
 Route::post('/savecart', 'ProductTrialController@save')->name('product.save');
 
-Route::get('/profile', 'ProductTrialController@profile')->name('profile');
+//Route::get('/profile', 'ProductTrialController@profile')->name('profile');
 
 //INVOICE
 Route::get('/invoice', 'InvoiceController@index');
 Route::get('/invoice_add', 'InvoiceController@add');
 Route::get('/invoice/detail/{id}', 'InvoiceController@detail');
-Route::get('/invoice/pdf/{id}', 'InvoiceController@pdf');
+Route::get('/pdf/{id}', 'InvoiceController@pdf')->name('pdf');
 Route::get('/invoice/findClient', 'InvoiceController@findClient');
 Route::get('/invoice/findProduct', 'InvoiceController@findProduct');
 Route::post('/invoice/save', 'InvoiceController@save');

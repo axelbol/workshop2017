@@ -49,6 +49,14 @@ class InvoiceController extends Controller
             ->findByName($req->input('q'));
     }
 
+    public function pdf($id)
+    {
+        $seller = Seller::find($id);
+
+        $pdf = PDF::loadView('seller.edit');
+        return $pdf->download('seller.edit');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Yajra\Datatables\Facades\Datatables;
 use App\Seller;
-
+use PDF;
 use Laracasts\Flash\Flash;
 
 class SellerController extends Controller
@@ -72,7 +72,12 @@ class SellerController extends Controller
     {
         $seller = Seller::find($id);
         return view('seller.edit')->with('seller', $seller);
+    }
 
+    public function pdf($id)
+    {
+        $pdf=PDF::loadView('invoice.pdf');
+        return$pdf->download('invoice.pdf');
     }
 
     /**

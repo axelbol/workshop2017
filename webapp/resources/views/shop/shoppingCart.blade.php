@@ -6,6 +6,7 @@
 
 @section('content')
 
+
 {!! Form::open(['route' => 'product.save', 'method' => 'post']) !!}
 
     @if(Session::has('cart'))
