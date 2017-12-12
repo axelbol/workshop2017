@@ -8,8 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <!-- Place favicon.ico in the root directory -->
+    
+    <link rel="stylesheet" href="{{asset('bower_components/EasyAutocomplete/dist/easy-autocomplete.min.css')}}">
+
+    
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="{{ url('css/vendor.css') }}">
+
+    
     <!-- Theme initialization -->
     <script>
         var themeSettings = (localStorage.getItem('themeSettings')) ? JSON.parse(localStorage.getItem('themeSettings')) :
@@ -396,6 +402,21 @@
         <script src="//cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
         <script src="{{ url('js/main.js') }}"></script>
         <script src="{{ url('js/validateForm.js') }}"></script>
+
+            
+            <script src="{{asset('ini.js')}}"></script>
+    <script src="{{asset('bower_components/riot/riot.min.js')}}"></script>
+    <script src="{{asset('bower_components/riot/riot+compiler.min.js')}}"></script>
+    <script src="{{asset('bower_components/EasyAutocomplete//dist/jquery.easy-autocomplete.min.js')}}"></script>
+            
+
+            @yield('bottom')
+
+        <script>
+            function baseUrl(url) {
+                return '{{url('')}}/' + url;
+            }
+        </script>
 
     </body>
 </html>
