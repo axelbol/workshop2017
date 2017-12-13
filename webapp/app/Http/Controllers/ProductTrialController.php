@@ -8,7 +8,7 @@ use App\Cart;
 use App\Order;
 
 use App\User;
-
+use PDF;
 use App\Http\Requests;
 use Session;
 use Auth;
@@ -37,6 +37,39 @@ class ProductTrialController extends Controller
         return redirect()->route('trial.index');
     }
 
+    public function getReduceByOne($id)
+    {
+        $oldCart = Session::has('cart') ? Session::get('cart'):null;
+        $cart = new Cart($oldCart);
+        $cart->reduceByOne($id);
+
+        if(count($cart->items)>0)
+        {
+            Session::put('cart', $cart);
+        }
+        else
+        {
+            Session::forget('cart');
+        }
+        return redirect()->route('product.shoppingcart');
+    }
+
+    public function getRemoveItem($id)
+    {
+        $oldCart = Session::has('cart') ? Session::get('cart'):null;
+        $cart = new Cart($oldCart);
+        $cart->removeItem($id);
+        if(count($cart->items)>0)
+        {
+            Session::put('cart', $cart);
+        }
+        else
+        {
+            Session::forget('cart');
+        }
+        return redirect()->route('product.shoppingcart');
+    }
+
     public function shoppingcart()
     {
         if(!Session::has('cart'))
@@ -55,11 +88,27 @@ class ProductTrialController extends Controller
 
         $order = new Order();
         $order->cart = serialize($cart);
+        $order->name=$request->name;
+        $order->last_name=$request->last_name;
+        $order->address=$request->address;
+        $order->nit=$request->nit;
+        $order->total_price=$request->input('total_price');
 
         Auth::user()->orders()->save($order);
 
         return view('product.index');
 
+    }
+
+    public function pdf($id)
+    {
+        $order=new Order;
+        $order = Order::find($id);
+
+        //$pdf=PDF::loadView('invoice.pdf')->with('seller', $seller);
+
+        $pdf = PDF::loadView('shop.pdf', ['order' => $order]);
+        return $pdf->download('shop.pdf');
     }
 
     public function profile()
@@ -70,8 +119,19 @@ class ProductTrialController extends Controller
             return $order;
         });
         return view('profile', ['orders'=>$orders]);
+    }
 
+    public function view()
+    {
+        return view('shop.view');
+    }
 
+    public function get_dataTableCart()
+    {
+        $order=new Order();
+        return datatables()->eloquent(Order::query())->toJson();
+        //$sellers = Seller::All();
+        //return view('seller.view', compact('sellers'));
     }
 
 

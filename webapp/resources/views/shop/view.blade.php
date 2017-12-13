@@ -14,15 +14,13 @@
         <table id="sellers-table">
             <thead>
             <tr>
-                <td> id </td>
+                <td> ID </td>
+                <td> Fecha </td>
                 <td> Nombre </td>
                 <td> Apellido </td>
-                <td> Dirección </td>
-                <td> Ciudad </td>
-                <td> Correo </td>
-                <td> Teléfono </td>
-                <td> Editar </td>
-                <td> Eliminar </td>
+                <td> Direccion </td>
+                <td> Precio </td>
+                <td> PDF </td>
             </tr>
             </thead>
         </table>
@@ -38,29 +36,17 @@
                 $('#sellers-table').DataTable({
                     processing: true,
                     serverSide: true,
-                    ajax: 'http://localhost/workshop2017/webapp/public/get_datatableSeller',
+                    ajax: 'http://localhost/workshop2017/webapp/public/get_datatableCart',
                     columns: [
                         {data: 'id'},
+                        {data: 'created_at'},
                         {data: 'name'},
                         {data: 'last_name'},
                         {data: 'address'},
-                        {data: 'city'},
-                        {data: 'email'},
-                        {data: 'phono'},
+                        {data: 'total_price'},
                         {
                             "mRender": function(data, type, row) {
-                                return '<a class="btn btn-small btn-info" href=seller/' + row.id + '/edit>Editar</a>';
-                            }
-                        },
-                        {
-                            "mRender": function(data, type, row) {
-                                return '<a class="btn btn-small btn-danger" href=' + row.id + '/destroy>Eliminar</a>';
-                            }
-                        },
-
-                        {
-                            "mRender": function(data, type, row) {
-                                return '<a class="btn btn-small btn-danger" href=' + row.id + '/pdfSeller>PDF</a>';
+                                return '<a class="btn btn-small btn-danger" href=' + row.id + '/pdf>PDF</a>';
                             }
                         },
                     ]

@@ -68,7 +68,7 @@ Route::get('/get_datatableSeller', 'SellerController@get_dataTableSeller');
 //Route::post('/selleradd', 'SellerController@store');
 
 //Route::resource('/selleredit/{id}', 'SellerController@edit');
-Route::get('/{id}/pdf', 'SellerController@pdf')->name('pdf');
+Route::get('/{id}/pdfSeller', 'SellerController@pdfSeller')->name('pdf.seller');
 //Route::get('/{id}', 'SellerController@edit');
 //Route::put('/updateseller/{id}', 'Sellercontroller@update')->name('seller.update');
 
@@ -78,11 +78,19 @@ Route::resource('seller', 'SellerController');
 //TRIAL PRODUCT
 Route::get('/productTrial', 'ProductTrialController@index')->name('trial.index');
 Route::get('/addtocart/{id}', 'ProductTrialController@addtocart')->name('product.addtocart');
+Route::get('/reduce/{id}', 'ProductTrialController@getReduceByOne')->name('product.reduceByOne');
+Route::get('/remove/{id}', 'ProductTrialController@getRemoveItem')->name('product.remove');
 Route::get('/shoppingcart', 'ProductTrialController@shoppingcart')->name('product.shoppingcart');
 
-Route::post('/savecart', 'ProductTrialController@save')->name('product.save');
 
-//Route::get('/profile', 'ProductTrialController@profile')->name('profile');
+Route::post('/savecart', 'ProductTrialController@save')->name('product.save');
+//DataTable Cart
+Route::get('/viewcart', 'ProductTrialController@view')->name('viewcart');
+Route::get('/get_datatableCart', 'ProductTrialController@get_dataTableCart');
+//PDF CART
+Route::get('/{id}/pdf', 'ProductTrialController@pdf')->name('pdf');
+//UNDONE
+Route::get('/profile', 'ProductTrialController@profile')->name('profile');
 
 //INVOICE
 Route::get('/invoice', 'InvoiceController@index');

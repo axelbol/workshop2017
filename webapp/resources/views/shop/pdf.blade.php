@@ -7,7 +7,7 @@
         .client-detail th{text-align:left;}
 
         .items{border-spacing:0;}
-        .items thead{background:#ddd;}
+        .items thead{background:#dc3545;}
         .items tbody{background:#eee;}
         .items tfoot{background:#ddd;}
         .items th{padding:10px;}
@@ -23,9 +23,9 @@
 
 <div class="header">
     <h1>
-        Comprobante # {{ str_pad ($seller->id, 7, '0', STR_PAD_LEFT) }}
+        Comprobante # {{ str_pad ($order->id, 7, '0', STR_PAD_LEFT) }}
         <small>
-            Emitido el {{ $seller->created_at }}
+            Emitido el {{ $order->created_at }}
         </small>
     </h1>
 </div>
@@ -34,15 +34,15 @@
         <th style="width:100px;">
             Cliente
         </th>
-        <td>{{ $seller->name }}</td>
+        <td>{{ $order->name }}</td>
     </tr>
     <tr>
-        <th>Ruc</th>
-        <td>{{ $seller->last_name }}</td>
+        <th>Nit</th>
+        <td>{{ $order->nit }}</td>
     </tr>
     <tr>
         <th>Dirección</th>
-        <td>{{ $seller->name }}</td>
+        <td>{{ $order->address }}</td>
     </tr>
 </table>
 
@@ -51,23 +51,32 @@
 <table class="items">
     <thead>
     <tr>
-        <th class="text-left">Producto</th>
-        <th class="text-right" style="width:100px;">Cantidad</th>
-        <th class="text-right" style="width:100px;">P.U</th>
+        <th class="text-left">Nombre</th>
+        <th class="text-right" style="width:100px;">Apellido</th>
+        <th class="text-right" style="width:100px;">Direccion</th>
         <th class="text-right" style="width:100px;">Total</th>
     </tr>
     </thead>
     <tbody>
-    <td>{{ $seller->id }}</td>
-    <td>{{ $seller->name }}</td>
-    <td>{{ $seller->phono }}</td>
-    <td>{{ $seller->email }}</td>
-
-
+        <tr>
+            <td>{{$order->name}}</td>
+            <td class="text-right">{{$order->last_name}}</td>
+            <td class="text-right">{{$order->address}}</td>
+            <td class="text-right">Bs. {{$order->total_price}}</td>
+        </tr>
     </tbody>
 
 
 
+    <tfoot>
+    <tr>
+        <td colspan="3" class="text-right"><b>TOTAL</b></td>
+        <td class="text-right">BS. {{ number_format($order->total_price, 2) }}</td>
+    </tr>
+
+
+
+    </tfoot>
 </table>
 </body>
 </html>

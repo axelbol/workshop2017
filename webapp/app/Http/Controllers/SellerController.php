@@ -74,10 +74,14 @@ class SellerController extends Controller
         return view('seller.edit')->with('seller', $seller);
     }
 
-    public function pdf($id)
+    public function pdfSeller($id)
     {
-        $pdf=PDF::loadView('invoice.pdf');
-        return$pdf->download('invoice.pdf');
+        $seller = Seller::find($id);
+        //$pdf=PDF::loadView('invoice.pdf')->with('seller', $seller);
+        $pdf = PDF::loadView('invoice.pdf', [
+            'seller' => $seller
+        ]);
+        return $pdf->download('invoice.pdf');
     }
 
     /**
