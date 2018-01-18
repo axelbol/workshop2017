@@ -18,10 +18,28 @@ $().ready(function () {
             },
             conditiondescription:{
                 required: check()
-                },
+            },
             productdescription:{
                 required: true
-            }
+            },
+            format:{
+                required: true
+            },
+            duration:{
+                required: true
+            },
+            ad:{
+                required: true
+            },
+            buynowprice:{
+                required: true
+            },
+
+
+
+            return:{
+                required: true
+            },
 
         },
     })
@@ -32,6 +50,15 @@ $().ready(function () {
             return false;
         }
         else {
+            return true;
+        }
+    }
+    function checkFormat () {
+        if ($("#format").val() == "Precio fijo") {
+            return true;
+        }
+
+        if ($("#format").val() == "Subasta") {
             return true;
         }
     }

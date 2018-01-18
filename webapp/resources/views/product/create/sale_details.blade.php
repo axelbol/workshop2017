@@ -35,13 +35,13 @@
                     <div class="form-group">
                         <div>
                             <label>
-                                <input class="radio" name="ad" type="radio">
+                                <input class="radio" name="ad" type="radio" id="ad">
                                 <span>Crear el anuncio en cuanto lo termine.</span>
                             </label>
                         </div>
                         <div>
                             <label>
-                                <input class="radio" type="radio" name="ad">
+                                <input class="radio" type="radio" name="ad" id="ad">
                                 <span>Programar para que empieze</span>
                             </label>
                         </div>

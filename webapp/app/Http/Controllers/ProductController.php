@@ -45,45 +45,46 @@ class ProductController extends Controller
      */
     public function store(ValidateProduct $request)
     {
+        dd($request->all());
 
         $Product = new Product($request->all());
-        $Product->save();
+        //$Product->save();
         if ($Product->format == "Precio fijo")
         {
             $FixedPrice = new FixedPrice($request->all());
             $FixedPrice->product()->associate($Product);
-            $FixedPrice->save();
+            //$FixedPrice->save();
         }
         if ($Product->format == "Subasta")
         {
             $AuctionMode = new AuctionMode($request->all());
             $AuctionMode->product()->associate($Product);
-            $AuctionMode->save();
+            //$AuctionMode->save();
         }
         if ($Product->donation == "true")
         {
             $Donation = new Donation($request->all());
             $Donation->product()->associate($Product);
-            $Donation->save();
+            //$Donation->save();
         }
         if($Product->return == "true")
         {
             $Devolution = new Devolution($request->all());
             $Devolution->product()->associate($Product);
-            $Devolution->save();
+            //$Devolution->save();
         }
 
         $Package = new Package($request->all());
         $Package->product()->associate($Product);
-        $Package->save();
+        //$Package->save();
 
         $Payment = new Payment($request->all());
         $Payment->product()->associate($Product);
-        $Payment->save();
+        //$Payment->save();
 
         $Schedule = new Schedule($request->all());
         $Schedule->product()->associate($Product);
-        $Schedule->save();
+        //$Schedule->save();
 
         $Shipping = new Shipping($request->all());
         if($Shipping->freeshipment == "true")
@@ -91,14 +92,14 @@ class ProductController extends Controller
             $Shipping->shipmentcost = 0;
         }
         $Shipping->product()->associate($Product);
-        $Shipping->save();
+        //$Shipping->save();
 
         $Storage = new Storage($request->all());
         $Storage->product()->associate($Product);
-        $Storage->save();
+        //$Storage->save();
 
 
-        dd($request->all());
+
         //$x->save();
     }
 
@@ -110,7 +111,18 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        //
+        $product = Product::find($product->id);
+        $product->auctionmode;
+        $product->devolution;
+        $product->donation;
+        $product->fixedprice;
+        $product->package;
+        $product->payment;
+        $product->schedule;
+        $product->shipping;
+        $product->storage;
+
+        return view('product.show')->with("product", $product);
     }
 
     /**
@@ -152,8 +164,8 @@ class ProductController extends Controller
 
         return Datatables::of($product)
             ->addColumn('action', function ($product) {
-                //return '<a href="#edit-'.$product->id.'" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
-                return "
+                return '<a href="http://localhost/workshop2017/webapp/public/product/'.$product->id.'" class="btn btn-xs btn-primary"><i class="glyphicon glyphicon-edit"></i> Edit</a>';
+                /*return "
                         <div class='item-actions-block'>
 
 
@@ -168,7 +180,7 @@ class ProductController extends Controller
                                     </a>
                         </div>
                         
-                        ";
+                        ";*/
             })
             ->editColumn('id', 'ID: {{$id}}')
             ->removeColumn('password')
