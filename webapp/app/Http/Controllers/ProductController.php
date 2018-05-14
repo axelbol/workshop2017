@@ -15,6 +15,12 @@ use App\Shipping;
 use App\Storage;
 use Illuminate\Http\Request;
 
+//Axel
+use App\ProductTrial;
+use Session;
+use Auth;
+use App\User;
+use App\Cart;
 class ProductController extends Controller
 {
     /**
@@ -22,6 +28,24 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function principalView()
+    {
+        $products = Product::all();
+        return view('principalView', ['products' => $products]);
+    }
+
+    public function addtocartAxel(Request $request, $id)
+    {
+        $product = Product::find($id);
+        $oldCart = Session::has('cart') ? Session::get('cart'):null;
+        $cart = new Cart($oldCart);
+        $cart->add($product, $product->id);
+
+        $request->session()->put('cart', $cart);
+        //dd($request->session()->get('cart'));
+        return redirect()->route('principal.view');
+    }
+
     public function index()
     {
         return view('product.index');

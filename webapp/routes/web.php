@@ -74,6 +74,9 @@ Route::get('/{id}/pdfSeller', 'SellerController@pdfSeller')->name('pdf.seller');
 
 Route::get('/{id}/destroy', 'SellerController@destroy')->name('seller.destroy');
 Route::resource('seller', 'SellerController');
+//Axel principal view
+Route::get('/principalView', 'ProductController@principalView')->name('principal.view');
+Route::get('/addtocartAxel/{id}', 'ProductController@addtocartAxel')->name('productAxel.addtocart');
 
 //TRIAL PRODUCT
 Route::get('/productTrial', 'ProductTrialController@index')->name('trial.index');
@@ -81,7 +84,8 @@ Route::get('/addtocart/{id}', 'ProductTrialController@addtocart')->name('product
 Route::get('/reduce/{id}', 'ProductTrialController@getReduceByOne')->name('product.reduceByOne');
 Route::get('/remove/{id}', 'ProductTrialController@getRemoveItem')->name('product.remove');
 Route::get('/shoppingcart', 'ProductTrialController@shoppingcart')->name('product.shoppingcart');
-
+Route::get('productTrialCreate', 'ProductTrialController@create')->name('trial.create');
+Route::post('productTrial/store', 'ProductTrialController@store')->name('trial.store');
 
 Route::post('/savecart', 'ProductTrialController@save')->name('product.save');
 //DataTable Cart

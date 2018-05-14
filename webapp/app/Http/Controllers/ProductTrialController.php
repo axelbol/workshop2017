@@ -143,7 +143,7 @@ class ProductTrialController extends Controller
      */
     public function create()
     {
-        //
+        return view('productTrial.create');
     }
 
     /**
@@ -154,7 +154,16 @@ class ProductTrialController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $formInput=$request->except('imagePath');
+        $imagePath=$request->imagePath;
+        if($imagePath){
+            $imageName=$imagePath->getClientOriginalName();
+            $imageName=$imagePath->getClientOriginalExtension();
+            $imagePath->move('images', $imageName);
+            $formInput['imagePath']=$imageName;
+        }
+        Product::create($formInput);
+        return redirect()->route('trial.index');
     }
 
     /**

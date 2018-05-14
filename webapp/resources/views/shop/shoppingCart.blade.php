@@ -7,7 +7,7 @@
 @section('content')
 
 
-{!! Form::open(['route' => 'product.save', 'method' => 'post']) !!}
+{!! Form::open(['route' => 'product.save', 'method' => 'post', 'files' => true]) !!}
 
     @if(Session::has('cart'))
         <div class="row">
@@ -15,7 +15,9 @@
                 <ul class="list-group">
                     @foreach($products as $product)
                         <li class="list-group-item">
+
                             <strong>{{ $product['qty'] }}</strong>
+
                             <strong>{{ $product['item']['title'] }}</strong>
                             <span class="label label-success">{{ $product['price'] }} Bs.</span>
 
@@ -39,7 +41,7 @@
             <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
                 <strong>Total: {{ $totalPrice }} Bs.</strong>
             </div>
-
+        </div>
 
         <hr>
 
@@ -51,7 +53,7 @@
     @else
         <div class="row">
             <div class="col-sm-6 col-md-6 col-md-offset-3 col-sm-offset-3">
-                <h2>No items</h2>
+                <h2>Sin Productos</h2>
             </div>
         </div>
     @endif

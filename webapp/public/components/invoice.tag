@@ -5,10 +5,10 @@
                 <input id="client" class="form-control typeahead" type="text" placeholder="Cliente" />
             </div>
             <div class="col-xs-2">
-                <input class="form-control" type="text" placeholder="Ruc" readonly value="{ruc}" />
+                <input class="form-control" type="text" placeholder="Ruc" " />
             </div>
             <div class="col-xs-4">
-                <input class="form-control" type="text" placeholder="Dirección" readonly value="{address}" />
+                <input class="form-control" type="text" placeholder="Dirección" value="{address}" />
             </div>
         </div>
     </div>
@@ -23,7 +23,7 @@
         <div class="col-xs-2">
             <div class="input-group">
                 <span class="input-group-addon" id="basic-addon1">S/.</span>
-                <input class="form-control" type="text" placeholder="Precio" value="{price}" readonly />
+                <input class="form-control" type="text" placeholder="Precio" value="{price}" />
             </div>
         </div>
         <div class="col-xs-1">
@@ -102,15 +102,15 @@
         __addProductToDetail() {
             self.detail.push({
                 id: self.product_id,
-                name: self.product.value,
-                quantity: parseFloat(self.quantity.value),
+                name: self.product,
+                quantity: parseFloat(self.quantity),
                 price: parseFloat(self.price),
-                total: parseFloat(self.price * self.quantity.value)
+                total: parseFloat(self.price * self.quantity)
             });
 
             self.product_id = 0;
-            self.product.value = '';
-            self.quantity.value = '';
+            self.product = '';
+            self.quantity = '';
             self.price = '';
 
             __calculate();
