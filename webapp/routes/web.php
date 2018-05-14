@@ -24,6 +24,7 @@ Route::get('/catalog/dataTable', 'CatalogController@indexDataTable');
 
 //PRODUCT
 Route::get('product/productData', 'ProductController@productData');
+
 Route::resource('product', 'ProductController');
 
 //WORKING LOGIN
